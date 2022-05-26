@@ -14,6 +14,13 @@
 		8545C2F9283D6C71006B225B /* PDToolboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545C2F8283D6C71006B225B /* PDToolboxTests.swift */; };
 		8545C303283D6C71006B225B /* PDToolboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545C302283D6C71006B225B /* PDToolboxUITests.swift */; };
 		8545C305283D6C71006B225B /* PDToolboxUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545C304283D6C71006B225B /* PDToolboxUITestsLaunchTests.swift */; };
+		8545C314283D6CF3006B225B /* IVRMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545C313283D6CF3006B225B /* IVRMenu.swift */; };
+		8545C316283D6DDE006B225B /* IVRKeyPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545C315283D6DDE006B225B /* IVRKeyPress.swift */; };
+		8545C318283D700C006B225B /* IVRReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545C317283D700C006B225B /* IVRReader.swift */; };
+		8545C31A283D8CEF006B225B /* IVRFileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545C319283D8CEF006B225B /* IVRFileWriter.swift */; };
+		8545C31C283D90C3006B225B /* XMLWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545C31B283D90C3006B225B /* XMLWriter.swift */; };
+		8545C325283EA6A2006B225B /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 8545C324283EA6A2006B225B /* SwiftCSV */; };
+		8545C327283ED0A8006B225B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545C326283ED0A8006B225B /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +52,12 @@
 		8545C2FE283D6C71006B225B /* PDToolboxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PDToolboxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8545C302283D6C71006B225B /* PDToolboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDToolboxUITests.swift; sourceTree = "<group>"; };
 		8545C304283D6C71006B225B /* PDToolboxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDToolboxUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8545C313283D6CF3006B225B /* IVRMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IVRMenu.swift; sourceTree = "<group>"; };
+		8545C315283D6DDE006B225B /* IVRKeyPress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IVRKeyPress.swift; sourceTree = "<group>"; };
+		8545C317283D700C006B225B /* IVRReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IVRReader.swift; sourceTree = "<group>"; };
+		8545C319283D8CEF006B225B /* IVRFileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IVRFileWriter.swift; sourceTree = "<group>"; };
+		8545C31B283D90C3006B225B /* XMLWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLWriter.swift; sourceTree = "<group>"; };
+		8545C326283ED0A8006B225B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8545C325283EA6A2006B225B /* SwiftCSV in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,11 +109,14 @@
 		8545C2E5283D6C70006B225B /* PDToolbox */ = {
 			isa = PBXGroup;
 			children = (
+				8545C312283D6CD5006B225B /* IVR Menu Tools */,
+				8545C311283D6C82006B225B /* DGCSV */,
 				8545C2E6283D6C70006B225B /* PDToolboxApp.swift */,
 				8545C2E8283D6C70006B225B /* ContentView.swift */,
 				8545C2EA283D6C71006B225B /* Assets.xcassets */,
 				8545C2EF283D6C71006B225B /* PDToolbox.entitlements */,
 				8545C2EC283D6C71006B225B /* Preview Content */,
+				8545C326283ED0A8006B225B /* MainView.swift */,
 			);
 			path = PDToolbox;
 			sourceTree = "<group>";
@@ -129,6 +146,25 @@
 			path = PDToolboxUITests;
 			sourceTree = "<group>";
 		};
+		8545C311283D6C82006B225B /* DGCSV */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DGCSV;
+			sourceTree = "<group>";
+		};
+		8545C312283D6CD5006B225B /* IVR Menu Tools */ = {
+			isa = PBXGroup;
+			children = (
+				8545C313283D6CF3006B225B /* IVRMenu.swift */,
+				8545C315283D6DDE006B225B /* IVRKeyPress.swift */,
+				8545C317283D700C006B225B /* IVRReader.swift */,
+				8545C319283D8CEF006B225B /* IVRFileWriter.swift */,
+				8545C31B283D90C3006B225B /* XMLWriter.swift */,
+			);
+			path = "IVR Menu Tools";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +181,9 @@
 			dependencies = (
 			);
 			name = PDToolbox;
+			packageProductDependencies = (
+				8545C324283EA6A2006B225B /* SwiftCSV */,
+			);
 			productName = PDToolbox;
 			productReference = 8545C2E3283D6C70006B225B /* PDToolbox.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +256,9 @@
 				Base,
 			);
 			mainGroup = 8545C2DA283D6C70006B225B;
+			packageReferences = (
+				8545C323283EA6A2006B225B /* XCRemoteSwiftPackageReference "SwiftCSV" */,
+			);
 			productRefGroup = 8545C2E4283D6C70006B225B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,8 +301,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8545C31A283D8CEF006B225B /* IVRFileWriter.swift in Sources */,
+				8545C327283ED0A8006B225B /* MainView.swift in Sources */,
+				8545C318283D700C006B225B /* IVRReader.swift in Sources */,
 				8545C2E9283D6C70006B225B /* ContentView.swift in Sources */,
+				8545C31C283D90C3006B225B /* XMLWriter.swift in Sources */,
 				8545C2E7283D6C70006B225B /* PDToolboxApp.swift in Sources */,
+				8545C314283D6CF3006B225B /* IVRMenu.swift in Sources */,
+				8545C316283D6DDE006B225B /* IVRKeyPress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +624,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8545C323283EA6A2006B225B /* XCRemoteSwiftPackageReference "SwiftCSV" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftcsv/SwiftCSV.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8545C324283EA6A2006B225B /* SwiftCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8545C323283EA6A2006B225B /* XCRemoteSwiftPackageReference "SwiftCSV" */;
+			productName = SwiftCSV;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8545C2DB283D6C70006B225B /* Project object */;
 }
