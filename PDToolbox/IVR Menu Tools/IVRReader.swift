@@ -10,9 +10,11 @@ import SwiftCSV
 
 struct IVRReader {
     
-    init(path: String) {
+    init() {}
+    
+    func readCSV(atPath url: URL) -> [IVRMenu] {
         do {
-            let url = URL(fileURLWithPath: path)
+            //let url = URL(fileURLWithPath: path)
             let csv = try CSV(url: url)
             var index = 0
             var menus: [IVRMenu] = []
@@ -30,50 +32,7 @@ struct IVRReader {
                         if rawActionType != "" {
                             let actionType = getActionType(forRawActionType: rawActionType)
                             let keyPressDestination = csv.namedRows[index]["Key \(keyPress) Destination"]!
-                            print("Destination: \(keyPressDestination)")
-                            let menuKeyPress = IVRKeyPress(key: "\(keyPress)", actionType: actionType, destination: keyPressDestination)
-                            menu.actions.append(menuKeyPress)
-                            //menus.append(menu)
-                        }
-                    }
-                    keyPress += 1
-                }
-                menus.append(menu)
-                index += 1
-            }
-            exportAsXML(menus: menus)
-            
-        } catch {
-            print("IVRReader: Failed to read CSV file")
-        }
-    }
-    
-    func exportAsXML(menus: [IVRMenu]) {
-        let writer = XMLWriter()
-        writer.write(menus: menus, toPath: "pdt-output.xml")
-    }
-    
-    func readCSV(atPath path: String) -> [IVRMenu] {
-        do {
-            let url = URL(fileURLWithPath: path)
-            let csv = try CSV(url: url)
-            var index = 0
-            var menus: [IVRMenu] = []
-            
-            while index < csv.namedRows.count {
-                let name = csv.namedRows[index]["Menu Name"]!
-                let extensionNumber = csv.namedRows[index]["Menu Ext"]!
-                let prompt = csv.namedRows[index]["Prompt Name/Script"]!
-                var menu = IVRMenu(extensionNumber: extensionNumber, name: name, prompt: prompt, actions: [])
-                
-                var keyPress = 0
-                
-                while keyPress < 10 {
-                    if let rawActionType = csv.namedRows[index]["Key \(keyPress) Action"] {
-                        if rawActionType != "" {
-                            let actionType = getActionType(forRawActionType: rawActionType)
-                            let keyPressDestination = csv.namedRows[index]["Key \(keyPress) Destination"]!
-                            print("Destination: \(keyPressDestination)")
+                            //print("Destination: \(keyPressDestination)")
                             let menuKeyPress = IVRKeyPress(key: "\(keyPress)", actionType: actionType, destination: keyPressDestination)
                             menu.actions.append(menuKeyPress)
                             //menus.append(menu)
@@ -88,6 +47,7 @@ struct IVRReader {
             
         } catch {
             print("IVRReader: Failed to read CSV file")
+            print(error)
             return []
         }
     }
