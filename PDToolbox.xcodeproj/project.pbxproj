@@ -21,6 +21,7 @@
 		8545C31C283D90C3006B225B /* XMLWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545C31B283D90C3006B225B /* XMLWriter.swift */; };
 		8545C325283EA6A2006B225B /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 8545C324283EA6A2006B225B /* SwiftCSV */; };
 		8545C327283ED0A8006B225B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545C326283ED0A8006B225B /* MainView.swift */; };
+		8545C32A28402C1C006B225B /* CroissantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545C32928402C1C006B225B /* CroissantViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		8545C319283D8CEF006B225B /* IVRFileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IVRFileWriter.swift; sourceTree = "<group>"; };
 		8545C31B283D90C3006B225B /* XMLWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLWriter.swift; sourceTree = "<group>"; };
 		8545C326283ED0A8006B225B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		8545C32928402C1C006B225B /* CroissantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CroissantViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		8545C2E5283D6C70006B225B /* PDToolbox */ = {
 			isa = PBXGroup;
 			children = (
+				8545C32828402BFE006B225B /* ViewModels */,
 				8545C312283D6CD5006B225B /* IVR Menu Tools */,
 				8545C311283D6C82006B225B /* DGCSV */,
 				8545C2E6283D6C70006B225B /* PDToolboxApp.swift */,
@@ -163,6 +166,14 @@
 				8545C31B283D90C3006B225B /* XMLWriter.swift */,
 			);
 			path = "IVR Menu Tools";
+			sourceTree = "<group>";
+		};
+		8545C32828402BFE006B225B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8545C32928402C1C006B225B /* CroissantViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +319,7 @@
 				8545C31C283D90C3006B225B /* XMLWriter.swift in Sources */,
 				8545C2E7283D6C70006B225B /* PDToolboxApp.swift in Sources */,
 				8545C314283D6CF3006B225B /* IVRMenu.swift in Sources */,
+				8545C32A28402C1C006B225B /* CroissantViewModel.swift in Sources */,
 				8545C316283D6DDE006B225B /* IVRKeyPress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
