@@ -21,7 +21,7 @@
 		8545C31C283D90C3006B225B /* XMLWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545C31B283D90C3006B225B /* XMLWriter.swift */; };
 		8545C325283EA6A2006B225B /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 8545C324283EA6A2006B225B /* SwiftCSV */; };
 		8545C327283ED0A8006B225B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545C326283ED0A8006B225B /* MainView.swift */; };
-		8545C32A28402C1C006B225B /* CroissantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545C32928402C1C006B225B /* CroissantViewModel.swift */; };
+		8545C32A28402C1C006B225B /* IVRToolsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545C32928402C1C006B225B /* IVRToolsViewModel.swift */; };
 		8545C32D28405C82006B225B /* KeyPressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545C32C28405C82006B225B /* KeyPressView.swift */; };
 		8545C32F28406585006B225B /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545C32E28406585006B225B /* MenuView.swift */; };
 /* End PBXBuildFile section */
@@ -61,7 +61,7 @@
 		8545C319283D8CEF006B225B /* IVRFileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IVRFileWriter.swift; sourceTree = "<group>"; };
 		8545C31B283D90C3006B225B /* XMLWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLWriter.swift; sourceTree = "<group>"; };
 		8545C326283ED0A8006B225B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		8545C32928402C1C006B225B /* CroissantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CroissantViewModel.swift; sourceTree = "<group>"; };
+		8545C32928402C1C006B225B /* IVRToolsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IVRToolsViewModel.swift; sourceTree = "<group>"; };
 		8545C32C28405C82006B225B /* KeyPressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPressView.swift; sourceTree = "<group>"; };
 		8545C32E28406585006B225B /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,7 +176,7 @@
 		8545C32828402BFE006B225B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				8545C32928402C1C006B225B /* CroissantViewModel.swift */,
+				8545C32928402C1C006B225B /* IVRToolsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -335,7 +335,7 @@
 				8545C2E7283D6C70006B225B /* PDToolboxApp.swift in Sources */,
 				8545C32F28406585006B225B /* MenuView.swift in Sources */,
 				8545C314283D6CF3006B225B /* IVRMenu.swift in Sources */,
-				8545C32A28402C1C006B225B /* CroissantViewModel.swift in Sources */,
+				8545C32A28402C1C006B225B /* IVRToolsViewModel.swift in Sources */,
 				8545C316283D6DDE006B225B /* IVRKeyPress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
