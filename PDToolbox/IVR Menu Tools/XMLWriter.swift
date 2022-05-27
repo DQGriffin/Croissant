@@ -8,7 +8,7 @@
 import Foundation
 
 struct XMLWriter: IVRFileWriter {
-    func write(menus: [IVRMenu], toPath: String) {
+    func write(menus: [IVRMenu], toPath path: URL) {
         var output = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
         output += "<MultilevelIVR>\n"
         
@@ -40,8 +40,7 @@ struct XMLWriter: IVRFileWriter {
         output += "</MultilevelIVR>\n"
         
         do {
-            let url = URL(fileURLWithPath: "/Users/dquavius/Downloads/Auto-Receptionist.xml")
-            try output.write(to: url, atomically: false, encoding: .utf8)
+            try output.write(to: path, atomically: false, encoding: .utf8)
         }
         catch {
             print("Failed to write file")
