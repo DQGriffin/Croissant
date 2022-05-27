@@ -8,28 +8,16 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    @ObservedObject var viewModel = CroissantViewModel()
+    
     var body: some View {
         VStack {
             Spacer()
-            Text("Select File . . .")
-            Button {
-                print("")
-            } label: {
-                Text("Select File . . .")
-            }
-
-            Spacer()
-            HStack {
-                VStack {
-                    Divider()
-                }
-                Text("Or")
-                VStack {
-                    Divider()
-                }
-            }
-            Spacer()
-            Text("Drag and Dop")
+            Text("Drag and drop CSV file here")
+                .font(.largeTitle)
+                .padding()
+            Text(viewModel.status)
             Spacer()
         }
         .frame(width: 500, height: 450)
@@ -41,7 +29,7 @@ struct MainView: View {
                         item.loadItem(forTypeIdentifier: identifier, options: nil) { urlData, error in
                             if let urlData = urlData as? Data {
                                 let url = NSURL(absoluteURLWithDataRepresentation: urlData, relativeTo: nil) as URL
-                                let reader = IVRReader(path: url.path)
+                                viewModel.transformCSV(atPath: url)
                             }
                         }
                     }
