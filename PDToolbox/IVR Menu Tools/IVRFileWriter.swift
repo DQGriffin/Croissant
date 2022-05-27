@@ -8,5 +8,5 @@
 import Foundation
 
 protocol IVRFileWriter {
-    func write(menus: [IVRMenu], toPath: String)
+    func write(menus: [IVRMenu], toPath: URL)
 }
