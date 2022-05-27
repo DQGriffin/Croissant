@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct IVRKeyPress: Codable {
+struct IVRKeyPress: Codable, Identifiable {
+    let id = UUID()
     var key: String
     var actionType: String
     var destination: String
