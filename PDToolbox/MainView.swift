@@ -22,6 +22,14 @@ struct MainView: View {
                 Text("Drag and drop CSV file here")
                     .font(.largeTitle)
                     .padding()
+                Toggle("Sanitize Prompts", isOn: $viewModel.isSanitizePrompsEnabled)
+                    .toggleStyle(.switch)
+                    .help("Remove invalid characters from prompts")
+                Toggle(isOn: $viewModel.isIsolateExtensionNumberEnabled) {
+                    Text("Isolate Extension Numbers")
+                }
+                .toggleStyle(.switch)
+                .help("Remove non-numeric characters from action destinations")
                 Text(viewModel.status)
                     .padding(.bottom)
                 if viewModel.isDone {
