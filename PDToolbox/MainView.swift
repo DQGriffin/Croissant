@@ -16,6 +16,9 @@ struct MainView: View {
         if !isShowingAudit {
             VStack {
                 Spacer()
+                Image(systemName: "arrow.down.doc")
+                    .resizable()
+                    .frame(width: 75, height: 95)
                 Text("Drag and drop CSV file here")
                     .font(.largeTitle)
                     .padding()
