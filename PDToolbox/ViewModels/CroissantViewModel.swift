@@ -13,6 +13,8 @@ class CroissantViewModel: ObservableObject {
     let writer = XMLWriter()
     @Published var status = ""
     @Published var error = ""
+    @Published var hasMenus = false
+    @Published var isDone = false
     var menus: [IVRMenu] = []
     
     init() {
@@ -47,5 +49,11 @@ class CroissantViewModel: ObservableObject {
     func transformCSV(atPath path: URL) {
         readCSV(atPath: path)
         writeXML()
+        Task {
+            await MainActor.run {
+                //hasMenus = true
+                isDone = true
+            }
+        }
     }
 }

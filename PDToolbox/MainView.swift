@@ -10,33 +10,54 @@ import SwiftUI
 struct MainView: View {
     
     @ObservedObject var viewModel = CroissantViewModel()
+    @State var isShowingAudit = false
     
     var body: some View {
-        VStack {
-            Spacer()
-            Text("Drag and drop CSV file here")
-                .font(.largeTitle)
-                .padding()
-            Text(viewModel.status)
-            Spacer()
-        }
-        .frame(width: 500, height: 450)
-        .onDrop(of: ["public.url", "public.file-url"], isTargeted: nil) { providers in
-            print("Hey, you dropped a file")
-            if let item = providers.first {
-                if let identifier = item.registeredTypeIdentifiers.first {
-                    if identifier == "public.ur" || identifier == "public.file-url" {
-                        item.loadItem(forTypeIdentifier: identifier, options: nil) { urlData, error in
-                            if let urlData = urlData as? Data {
-                                let url = NSURL(absoluteURLWithDataRepresentation: urlData, relativeTo: nil) as URL
-                                viewModel.transformCSV(atPath: url)
+        if !isShowingAudit {
+            VStack {
+                Spacer()
+                Text("Drag and drop CSV file here")
+                    .font(.largeTitle)
+                    .padding()
+                Text(viewModel.status)
+                    .padding(.bottom)
+                if viewModel.isDone {
+                    Button {
+                        isShowingAudit = true
+                    } label: {
+                        Text("View Audit")
+                    }
+
+                }
+                Spacer()
+            }
+            .frame(width: 500, height: 450)
+            .onDrop(of: ["public.url", "public.file-url"], isTargeted: nil) { providers in
+                print("Hey, you dropped a file")
+                if let item = providers.first {
+                    if let identifier = item.registeredTypeIdentifiers.first {
+                        if identifier == "public.ur" || identifier == "public.file-url" {
+                            item.loadItem(forTypeIdentifier: identifier, options: nil) { urlData, error in
+                                if let urlData = urlData as? Data {
+                                    let url = NSURL(absoluteURLWithDataRepresentation: urlData, relativeTo: nil) as URL
+                                    viewModel.transformCSV(atPath: url)
+                                }
                             }
                         }
                     }
                 }
+                return true
             }
-            return true
         }
+        else {
+            List(viewModel.menus) { menu in
+                MenuView(menu: menu)
+                    .padding(.bottom)
+                Divider()
+            }
+            .frame(width: 600, height: 500)
+        }
+        
     }
 }
 
