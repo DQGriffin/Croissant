@@ -54,6 +54,9 @@ class CroissantViewModel: ObservableObject {
         if isSanitizePrompsEnabled {
             sanitizePrompts()
         }
+        if isIsolateExtensionNumberEnabled {
+            isolateExtensionNumbers()
+        }
         writeXML()
         Task {
             await MainActor.run {
@@ -79,6 +82,21 @@ class CroissantViewModel: ObservableObject {
             menus[index].prompt = menus[index].prompt.replacingOccurrences(of: "!", with: ".")
             menus[index].prompt = menus[index].prompt.replacingOccurrences(of: "?", with: ".")
             index += 1
+        }
+    }
+    
+    func isolateExtensionNumbers() {
+        var menuIndex = 0
+        
+        while menuIndex < menus.count {
+            var actionIndex = 0
+            
+            while actionIndex < menus[menuIndex].actions.count {
+                menus[menuIndex].actions[actionIndex].destination = menus[menuIndex].actions[actionIndex].destination.filter("0123456789".contains)
+                actionIndex += 1
+            }
+            
+            menuIndex += 1
         }
     }
     
