@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct IVRMenu: Codable {
+struct IVRMenu: Codable, Identifiable {
+    let id = UUID()
     var extensionNumber: String
     var name: String
     var language: String = "English (United States)"
