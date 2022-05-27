@@ -16,6 +16,7 @@ struct MenuView: View {
             HStack(alignment: .center) {
                 Text(menu.name)
                     .font(.title)
+                    .bold()
                     .padding(.leading)
                 Text(menu.extensionNumber)
             }
@@ -23,11 +24,14 @@ struct MenuView: View {
             Text("Prompt: \(menu.prompt)")
                 .lineLimit(-1)
                 .padding(.leading)
-            List(menu.actions) { action in
-                KeyPressView(keyPress: action)
-                    .padding()
-                    .border(.white, width: 1)
+            VStack {
+                ForEach(menu.actions) { action in
+                    KeyPressView(keyPress: action)
+                        .padding()
+                        .border(.white, width: 1)
+                }
             }
+            .padding()
         }
     }
 }
