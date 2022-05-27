@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     
-    @ObservedObject var viewModel = CroissantViewModel()
+    @ObservedObject var viewModel = IVRToolsViewModel()
     @State var isShowingAudit = false
     
     var body: some View {

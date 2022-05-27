@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CroissantViewModel: ObservableObject {
+class IVRToolsViewModel: ObservableObject {
     
     let reader = IVRReader()
     let writer = XMLWriter()
