@@ -11,38 +11,33 @@ struct KeyPressView: View {
     let keyPress: IVRKeyPress
     
     var body: some View {
-        HStack {
-            VStack {
+        HStack(alignment: .center) {
+            VStack(alignment: .trailing) {
                 HStack {
-                    Spacer()
                     Text("Key")
                         .bold()
                 }
                 HStack {
-                    Spacer()
                     Text("Action")
                         .bold()
                 }
                 HStack {
-                    Spacer()
                     Text("Destination")
                         .bold()
                 }
             }
-            VStack {
+            VStack(alignment: .leading) {
                 HStack {
                     Text(keyPress.key)
-                    Spacer()
                 }
                 HStack {
                     Text(keyPress.actionType)
-                    Spacer()
                 }
                 HStack {
                     Text(keyPress.destination)
-                    Spacer()
                 }
             }
+            Spacer()
         }
     }
 }
