@@ -33,7 +33,6 @@ class IVRToolsViewModel: ObservableObject {
         Task {
             await MainActor.run {
                 status = newStatus
-                print(newStatus)
             }
         }
     }
@@ -43,7 +42,6 @@ class IVRToolsViewModel: ObservableObject {
         let manager = FileManager()
         var path = manager.urls(for: .downloadsDirectory, in: .userDomainMask)[0]
         path.appendPathComponent("Auto-Receptionist.xml")
-        print("Constructed Path: \(path.path)")
         writer.write(menus: menus, toPath: path)
         setStatus(to: "Auto-Receptionist.xml exported to downloads folder")
         
