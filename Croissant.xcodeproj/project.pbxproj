@@ -74,6 +74,7 @@
 		8545C32C28405C82006B225B /* KeyPressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPressView.swift; sourceTree = "<group>"; };
 		8545C32E28406585006B225B /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		855DCAC72841B76B00F2A116 /* UnderConstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderConstructionView.swift; sourceTree = "<group>"; };
+		855DCAC92842478A00F2A116 /* Croissant.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Croissant.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +134,7 @@
 		8545C2E5283D6C70006B225B /* Croissant */ = {
 			isa = PBXGroup;
 			children = (
+				855DCAC92842478A00F2A116 /* Croissant.entitlements */,
 				85131AF1284163B500A7D597 /* Models */,
 				8545C32B28405AA4006B225B /* Views */,
 				8545C32828402BFE006B225B /* ViewModels */,
