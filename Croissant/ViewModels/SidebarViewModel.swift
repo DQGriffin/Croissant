@@ -14,6 +14,8 @@ class SidebarViewModel: ObservableObject {
     init() {
         options = []
         options.append(SidebarCategory(category: "IVR Tools"))
+        options.append(SidebarCategory(category: "SIP Credentials Tool"))
+        options.append(SidebarCategory(category: "Custom Config Generator"))
     }
     
     @ViewBuilder
@@ -21,8 +23,10 @@ class SidebarViewModel: ObservableObject {
         switch category {
         case "IVR Tools":
             MainView()
+        case "Custom Config Generator":
+            UnderConstructionView()
         default:
-            MainView()
+            UnderConstructionView()
         }
     }
     
