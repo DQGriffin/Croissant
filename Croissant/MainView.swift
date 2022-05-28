@@ -42,9 +42,8 @@ struct MainView: View {
                 }
                 Spacer()
             }
-            .frame(width: 500, height: 450)
+            .frame(width: 450, height: 450)
             .onDrop(of: ["public.url", "public.file-url"], isTargeted: nil) { providers in
-                print("Hey, you dropped a file")
                 if let item = providers.first {
                     if let identifier = item.registeredTypeIdentifiers.first {
                         if identifier == "public.ur" || identifier == "public.file-url" {
