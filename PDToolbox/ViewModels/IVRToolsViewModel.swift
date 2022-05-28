@@ -16,7 +16,7 @@ class IVRToolsViewModel: ObservableObject {
     @Published var hasMenus = false
     @Published var isDone = false
     @Published var isInsertNewlineEnabled = false
-    @Published var isIsolateExtensionNumberEnabled = false
+    @Published var isIsolateExtensionNumberEnabled = true
     @Published var isSanitizePrompsEnabled = true
     var menus: [IVRMenu] = []
     
