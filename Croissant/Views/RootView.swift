@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RootView: View {
+    
     var body: some View {
         NavigationView {
             SidebarView()
@@ -17,10 +18,15 @@ struct RootView: View {
             ToolbarItem(placement: ToolbarItemPlacement.navigation) {
                 Button {
                     NSApp.keyWindow?.firstResponder?.tryToPerform(
-                                #selector(NSSplitViewController.toggleSidebar(_:)), with: nil
-                        )
+                        #selector(NSSplitViewController.toggleSidebar(_:)), with: nil
+                    )
                 } label: {
                     Label("Toggle sidebar", systemImage: "sidebar.left")
+                }
+                .onAppear {
+                    NSApp.keyWindow?.firstResponder?.tryToPerform(
+                        #selector(NSSplitViewController.toggleSidebar(_:)), with: nil
+                    )
                 }
             }
         }
