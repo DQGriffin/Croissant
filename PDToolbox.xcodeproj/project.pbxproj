@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85131AEE2841625500A7D597 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85131AED2841625500A7D597 /* SidebarView.swift */; };
+		85131AF02841627F00A7D597 /* SidebarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85131AEF2841627F00A7D597 /* SidebarViewModel.swift */; };
+		85131AF3284163C700A7D597 /* SidebarCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85131AF2284163C700A7D597 /* SidebarCategory.swift */; };
+		85131AF5284167C300A7D597 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85131AF4284167C300A7D597 /* RootView.swift */; };
 		8545C2E7283D6C70006B225B /* PDToolboxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545C2E6283D6C70006B225B /* PDToolboxApp.swift */; };
 		8545C2E9283D6C70006B225B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545C2E8283D6C70006B225B /* ContentView.swift */; };
 		8545C2EB283D6C71006B225B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8545C2EA283D6C71006B225B /* Assets.xcassets */; };
@@ -44,6 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		85131AED2841625500A7D597 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		85131AEF2841627F00A7D597 /* SidebarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewModel.swift; sourceTree = "<group>"; };
+		85131AF2284163C700A7D597 /* SidebarCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarCategory.swift; sourceTree = "<group>"; };
+		85131AF4284167C300A7D597 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		8545C2E3283D6C70006B225B /* PDToolbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDToolbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8545C2E6283D6C70006B225B /* PDToolboxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDToolboxApp.swift; sourceTree = "<group>"; };
 		8545C2E8283D6C70006B225B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +100,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		85131AF1284163B500A7D597 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				85131AF2284163C700A7D597 /* SidebarCategory.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		8545C2DA283D6C70006B225B = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +131,7 @@
 		8545C2E5283D6C70006B225B /* PDToolbox */ = {
 			isa = PBXGroup;
 			children = (
+				85131AF1284163B500A7D597 /* Models */,
 				8545C32B28405AA4006B225B /* Views */,
 				8545C32828402BFE006B225B /* ViewModels */,
 				8545C312283D6CD5006B225B /* IVR Menu Tools */,
@@ -177,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				8545C32928402C1C006B225B /* IVRToolsViewModel.swift */,
+				85131AEF2841627F00A7D597 /* SidebarViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -186,6 +204,8 @@
 			children = (
 				8545C32C28405C82006B225B /* KeyPressView.swift */,
 				8545C32E28406585006B225B /* MenuView.swift */,
+				85131AED2841625500A7D597 /* SidebarView.swift */,
+				85131AF4284167C300A7D597 /* RootView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -334,9 +354,13 @@
 				8545C31C283D90C3006B225B /* XMLWriter.swift in Sources */,
 				8545C2E7283D6C70006B225B /* PDToolboxApp.swift in Sources */,
 				8545C32F28406585006B225B /* MenuView.swift in Sources */,
+				85131AF3284163C700A7D597 /* SidebarCategory.swift in Sources */,
 				8545C314283D6CF3006B225B /* IVRMenu.swift in Sources */,
 				8545C32A28402C1C006B225B /* IVRToolsViewModel.swift in Sources */,
+				85131AEE2841625500A7D597 /* SidebarView.swift in Sources */,
 				8545C316283D6DDE006B225B /* IVRKeyPress.swift in Sources */,
+				85131AF02841627F00A7D597 /* SidebarViewModel.swift in Sources */,
+				85131AF5284167C300A7D597 /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
