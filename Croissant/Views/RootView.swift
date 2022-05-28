@@ -29,6 +29,18 @@ struct RootView: View {
                     )
                 }
             }
+            ToolbarItem(placement: ToolbarItemPlacement.status) {
+                Button {
+                    
+                } label: {
+                    Label("About Croissant", systemImage: "info.circle")
+                }
+                .onAppear {
+                    NSApp.keyWindow?.firstResponder?.tryToPerform(
+                        #selector(NSSplitViewController.toggleSidebar(_:)), with: nil
+                    )
+                }
+            }
         }
     }
 }
