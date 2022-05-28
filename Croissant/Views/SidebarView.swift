@@ -25,6 +25,7 @@ struct SidebarView: View {
                     }
                 })
         }
+        .frame(minWidth: 215)
         .listStyle(.sidebar)
     }
 }
