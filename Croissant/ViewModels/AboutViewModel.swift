@@ -14,7 +14,9 @@ class AboutViewModel: ObservableObject {
     init() {
         attributions = []
         attributions.append(LibraryAttribution(name: "SwiftCSV", link: "https://github.com/swiftcsv/SwiftCSV"))
-        attributions.append(LibraryAttribution(name: "Excelify", link: "https://github.com/bruh"))
+        attributions.append(LibraryAttribution(name: "CoreXLSX", link: "https://github.com/CoreOffice/CoreXLSX"))
+        attributions.append(LibraryAttribution(name: "XMLCoder", link: "https://github.com/CoreOffice/XMLCoder"))
+        attributions.append(LibraryAttribution(name: "ZIPFoundation", link: "https://github.com/weichsel/ZIPFoundation"))
     }
     
 }
