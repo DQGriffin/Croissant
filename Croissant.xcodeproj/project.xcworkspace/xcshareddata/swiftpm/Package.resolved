@@ -1,12 +1,39 @@
 {
   "pins" : [
     {
+      "identity" : "corexlsx",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/CoreOffice/CoreXLSX",
+      "state" : {
+        "revision" : "b7cc8d3b79c07c2a781d82db645d7cec24106e08",
+        "version" : "0.14.1"
+      }
+    },
+    {
       "identity" : "swiftcsv",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/swiftcsv/SwiftCSV.git",
       "state" : {
         "revision" : "039cc273dcc91f4c9d85e05a2514bbe63e7dde60",
         "version" : "0.6.1"
+      }
+    },
+    {
+      "identity" : "xmlcoder",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/maxdesiatov/XMLCoder.git",
+      "state" : {
+        "revision" : "ac411bd6ab342780be0dfe6f679410f791d751d9",
+        "version" : "0.11.1"
+      }
+    },
+    {
+      "identity" : "zipfoundation",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/weichsel/ZIPFoundation.git",
+      "state" : {
+        "revision" : "7254c74b49cec2cb81520523ba993c671f71b066",
+        "version" : "0.9.14"
       }
     }
   ],
