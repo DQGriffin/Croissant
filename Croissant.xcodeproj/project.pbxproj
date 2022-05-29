@@ -32,6 +32,8 @@
 		855DCACB28429A5500F2A116 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855DCACA28429A5500F2A116 /* AboutView.swift */; };
 		855DCACF28429B7900F2A116 /* LibraryAttribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855DCACE28429B7900F2A116 /* LibraryAttribution.swift */; };
 		855DCAD128429BD400F2A116 /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855DCAD028429BD400F2A116 /* AboutViewModel.swift */; };
+		855DCAE928430A4600F2A116 /* ExcelIVRReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855DCAE828430A4600F2A116 /* ExcelIVRReader.swift */; };
+		855DCAEC28430ACD00F2A116 /* CoreXLSX in Frameworks */ = {isa = PBXBuildFile; productRef = 855DCAEB28430ACD00F2A116 /* CoreXLSX */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,7 @@
 		855DCACA28429A5500F2A116 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		855DCACE28429B7900F2A116 /* LibraryAttribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAttribution.swift; sourceTree = "<group>"; };
 		855DCAD028429BD400F2A116 /* AboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
+		855DCAE828430A4600F2A116 /* ExcelIVRReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelIVRReader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				855DCAEC28430ACD00F2A116 /* CoreXLSX in Frameworks */,
 				8545C325283EA6A2006B225B /* SwiftCSV in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,6 +201,7 @@
 				8545C317283D700C006B225B /* IVRReader.swift */,
 				8545C319283D8CEF006B225B /* IVRFileWriter.swift */,
 				8545C31B283D90C3006B225B /* XMLWriter.swift */,
+				855DCAE828430A4600F2A116 /* ExcelIVRReader.swift */,
 			);
 			path = "IVR Menu Tools";
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 			name = Croissant;
 			packageProductDependencies = (
 				8545C324283EA6A2006B225B /* SwiftCSV */,
+				855DCAEB28430ACD00F2A116 /* CoreXLSX */,
 			);
 			productName = PDToolbox;
 			productReference = 8545C2E3283D6C70006B225B /* Croissant.app */;
@@ -317,6 +323,7 @@
 			mainGroup = 8545C2DA283D6C70006B225B;
 			packageReferences = (
 				8545C323283EA6A2006B225B /* XCRemoteSwiftPackageReference "SwiftCSV" */,
+				855DCAEA28430ACD00F2A116 /* XCRemoteSwiftPackageReference "CoreXLSX" */,
 			);
 			productRefGroup = 8545C2E4283D6C70006B225B /* Products */;
 			projectDirPath = "";
@@ -368,6 +375,7 @@
 				8545C318283D700C006B225B /* IVRReader.swift in Sources */,
 				8545C2E9283D6C70006B225B /* ContentView.swift in Sources */,
 				8545C31C283D90C3006B225B /* XMLWriter.swift in Sources */,
+				855DCAE928430A4600F2A116 /* ExcelIVRReader.swift in Sources */,
 				855DCACF28429B7900F2A116 /* LibraryAttribution.swift in Sources */,
 				8545C2E7283D6C70006B225B /* PDToolboxApp.swift in Sources */,
 				8545C32F28406585006B225B /* MenuView.swift in Sources */,
@@ -704,6 +712,14 @@
 				minimumVersion = 0.6.1;
 			};
 		};
+		855DCAEA28430ACD00F2A116 /* XCRemoteSwiftPackageReference "CoreXLSX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CoreOffice/CoreXLSX";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -711,6 +727,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8545C323283EA6A2006B225B /* XCRemoteSwiftPackageReference "SwiftCSV" */;
 			productName = SwiftCSV;
+		};
+		855DCAEB28430ACD00F2A116 /* CoreXLSX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 855DCAEA28430ACD00F2A116 /* XCRemoteSwiftPackageReference "CoreXLSX" */;
+			productName = CoreXLSX;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
