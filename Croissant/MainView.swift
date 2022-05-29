@@ -19,7 +19,7 @@ struct MainView: View {
                 Image(systemName: "arrow.down.doc")
                     .resizable()
                     .frame(width: 75, height: 95)
-                Text("Drag and drop CSV file here")
+                Text("Drag and drop BRD here")
                     .font(.largeTitle)
                     .padding()
                 Toggle("Sanitize Prompts", isOn: $viewModel.isSanitizePrompsEnabled)
