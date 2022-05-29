@@ -8,8 +8,44 @@
 import SwiftUI
 
 struct AboutView: View {
+    
+    let viewModel = AboutViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Image(systemName: "help")
+                .frame(width: 100, height: 100)
+            VStack(alignment: .leading) {
+                VStack(alignment: .leading) {
+                    Text("Croissant")
+                        .font(.title)
+                        .bold()
+                    Text("Version 1.0")
+                        .font(.body)
+                }
+                .padding(.vertical)
+                Spacer()
+                Text("Copyright © 2022 D'Quavius Griffin. All rights reserved.")
+                    .font(.caption)
+                HStack {
+                    Button {
+                        
+                    } label: {
+                        Text("Acknowledgements")
+                    }
+                    Button {
+                        
+                    } label: {
+                        Text("Submit Feedback")
+                    }
+
+                    Spacer()
+                }
+                .padding(.vertical)
+            }
+        }
+        .frame(minWidth: 200, minHeight: 200)
+        .frame(maxWidth: 400, maxHeight: 200)
     }
 }
 
