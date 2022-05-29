@@ -50,7 +50,7 @@ struct MainView: View {
                             item.loadItem(forTypeIdentifier: identifier, options: nil) { urlData, error in
                                 if let urlData = urlData as? Data {
                                     let url = NSURL(absoluteURLWithDataRepresentation: urlData, relativeTo: nil) as URL
-                                    viewModel.transformCSV(atPath: url)
+                                    viewModel.transform(atPath: url)
                                 }
                             }
                         }
