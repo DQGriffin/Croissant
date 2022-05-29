@@ -9,7 +9,8 @@ import Foundation
 
 class IVRToolsViewModel: ObservableObject {
     
-    let reader = IVRReader()
+    let csvReader = IVRReader()
+    let excelReader = ExcelIVRReader()
     let writer = XMLWriter()
     @Published var status = ""
     @Published var error = ""
@@ -25,7 +26,7 @@ class IVRToolsViewModel: ObservableObject {
     
     func readCSV(atPath path: URL) {
         setStatus(to: "Reading file at \(path.path)")
-        menus = reader.readCSV(atPath: path)
+        menus = csvReader.readCSV(atPath: path)
         setStatus(to: "Read \(menus.count) IVR Menus")
     }
     
@@ -45,6 +46,46 @@ class IVRToolsViewModel: ObservableObject {
         writer.write(menus: menus, toPath: path)
         setStatus(to: "Auto-Receptionist.xml exported to downloads folder")
         
+    }
+    
+    func transform(atPath path: URL) {
+        if path.path.contains("xlsx") {
+            do {
+                menus = try excelReader.readExcel(atPath: path)
+                if isSanitizePrompsEnabled {
+                    sanitizePrompts()
+                }
+                if isIsolateExtensionNumberEnabled {
+                    isolateExtensionNumbers()
+                }
+                writeXML()
+                Task {
+                    await MainActor.run {
+                        //hasMenus = true
+                        isDone = true
+                    }
+                }
+            }
+            catch {
+                print(error)
+            }
+        }
+        else {
+            readCSV(atPath: path)
+            if isSanitizePrompsEnabled {
+                sanitizePrompts()
+            }
+            if isIsolateExtensionNumberEnabled {
+                isolateExtensionNumbers()
+            }
+            writeXML()
+            Task {
+                await MainActor.run {
+                    //hasMenus = true
+                    isDone = true
+                }
+            }
+        }
     }
     
     func transformCSV(atPath path: URL) {
