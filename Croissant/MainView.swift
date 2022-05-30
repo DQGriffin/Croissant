@@ -23,7 +23,7 @@ struct MainView: View {
                     .font(.largeTitle)
                     .padding()
                 VStack(alignment: .leading) {
-                    Text("1. Drag and drop your BRD into this window")
+                    Text("1. Drag and drop the BRD into this window")
                         .font(.caption2)
                     Text("2. Check your downloads folder for the generated Auto-Receptionist.xml file")
                         .font(.caption2)
