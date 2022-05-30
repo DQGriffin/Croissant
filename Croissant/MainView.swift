@@ -22,14 +22,15 @@ struct MainView: View {
                 Text("Drag and drop BRD here")
                     .font(.largeTitle)
                     .padding()
-                Toggle("Sanitize Prompts", isOn: $viewModel.isSanitizePrompsEnabled)
-                    .toggleStyle(.switch)
-                    .help("Remove invalid characters from prompts")
-                Toggle(isOn: $viewModel.isIsolateExtensionNumberEnabled) {
-                    Text("Isolate Extension Numbers")
+                VStack(alignment: .leading) {
+                    Text("1. Drag and drop your BRD into this window")
+                        .font(.caption2)
+                    Text("2. Check your downloads folder for the generated Auto-Receptionist.xml file")
+                        .font(.caption2)
+                    Text("3. Upload the file in Service Web")
+                        .font(.caption2)
                 }
-                .toggleStyle(.switch)
-                .help("Remove non-numeric characters from action destinations")
+                .padding()
                 Text(viewModel.status)
                     .padding(.bottom)
                 if viewModel.isDone {
