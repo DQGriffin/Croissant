@@ -38,11 +38,12 @@ struct AboutView: View {
                     } label: {
                         Text("Submit Feedback")
                     }
-
+                    
                     Spacer()
                 }
                 .padding(.vertical)
             }
+            .padding(.trailing)
         }
         .frame(minWidth: 200, minHeight: 200)
         .frame(maxWidth: 400, maxHeight: 200)
