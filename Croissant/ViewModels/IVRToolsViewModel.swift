@@ -23,8 +23,7 @@ class IVRToolsViewModel: ObservableObject {
     @Published var hasMessage = false
     var menus: [IVRMenu] = []
     
-    init() {
-    }
+    init() { }
     
     func readCSV(atPath path: URL) {
         setStatus(to: "Reading file at \(path.path)")
