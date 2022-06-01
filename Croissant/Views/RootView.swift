@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct RootView: View {
     
-    @State private var isShowingAboutView = false
+    @State private var isShowingAboutView = false 
     
     var body: some View {
         NavigationView {
@@ -38,7 +39,7 @@ struct RootView: View {
             }
             ToolbarItem(placement: ToolbarItemPlacement.status) {
                 Button {
-                    isShowingAboutView.toggle()
+                    //isShowingAboutView.toggle()
                     print("Toggle")
                 } label: {
                     Label("About Croissant", systemImage: isShowingAboutView ? "x.circle" : "info.circle")
