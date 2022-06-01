@@ -15,12 +15,7 @@ struct RootView: View {
     var body: some View {
         NavigationView {
             SidebarView()
-            if !isShowingAboutView {
-                MainView()
-            }
-            else {
-                AboutView()
-            }
+            MainView()
         }
         .toolbar {
             ToolbarItem(placement: ToolbarItemPlacement.navigation) {
@@ -39,12 +34,15 @@ struct RootView: View {
             }
             ToolbarItem(placement: ToolbarItemPlacement.status) {
                 Button {
-                    //isShowingAboutView.toggle()
+                    isShowingAboutView.toggle()
                     print("Toggle")
                 } label: {
                     Label("About Croissant", systemImage: isShowingAboutView ? "x.circle" : "info.circle")
                 }
             }
+        }
+        .sheet(isPresented: $isShowingAboutView) {
+            AboutView(isPresented: $isShowingAboutView)
         }
     }
 }
