@@ -11,6 +11,7 @@
 		85131AF02841627F00A7D597 /* SidebarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85131AEF2841627F00A7D597 /* SidebarViewModel.swift */; };
 		85131AF3284163C700A7D597 /* SidebarCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85131AF2284163C700A7D597 /* SidebarCategory.swift */; };
 		85131AF5284167C300A7D597 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85131AF4284167C300A7D597 /* RootView.swift */; };
+		853FF39C2847B53400905DD8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853FF39B2847B53400905DD8 /* Extensions.swift */; };
 		8545C2E7283D6C70006B225B /* PDToolboxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545C2E6283D6C70006B225B /* PDToolboxApp.swift */; };
 		8545C2E9283D6C70006B225B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545C2E8283D6C70006B225B /* ContentView.swift */; };
 		8545C2EB283D6C71006B225B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8545C2EA283D6C71006B225B /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 		85131AEF2841627F00A7D597 /* SidebarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewModel.swift; sourceTree = "<group>"; };
 		85131AF2284163C700A7D597 /* SidebarCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarCategory.swift; sourceTree = "<group>"; };
 		85131AF4284167C300A7D597 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		853FF39B2847B53400905DD8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8545C2E3283D6C70006B225B /* Croissant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Croissant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8545C2E6283D6C70006B225B /* PDToolboxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDToolboxApp.swift; sourceTree = "<group>"; };
 		8545C2E8283D6C70006B225B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			children = (
 				85131AF2284163C700A7D597 /* SidebarCategory.swift */,
 				855DCACE28429B7900F2A116 /* LibraryAttribution.swift */,
+				853FF39B2847B53400905DD8 /* Extensions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				8545C2DF283D6C70006B225B /* Sources */,
 				8545C2E0283D6C70006B225B /* Frameworks */,
 				8545C2E1283D6C70006B225B /* Resources */,
+				853FF39D2847DC7C00905DD8 /* Increment Build Number */,
 			);
 			buildRules = (
 			);
@@ -369,6 +373,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		853FF39D2847DC7C00905DD8 /* Increment Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Increment Build Number";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8545C2DF283D6C70006B225B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -383,6 +408,7 @@
 				8545C2E9283D6C70006B225B /* ContentView.swift in Sources */,
 				8545C31C283D90C3006B225B /* XMLWriter.swift in Sources */,
 				855DCAE928430A4600F2A116 /* ExcelIVRReader.swift in Sources */,
+				853FF39C2847B53400905DD8 /* Extensions.swift in Sources */,
 				855DCACF28429B7900F2A116 /* LibraryAttribution.swift in Sources */,
 				8545C2E7283D6C70006B225B /* PDToolboxApp.swift in Sources */,
 				8545C32F28406585006B225B /* MenuView.swift in Sources */,
@@ -552,7 +578,7 @@
 				CODE_SIGN_ENTITLEMENTS = Croissant/Croissant.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 250;
 				DEVELOPMENT_ASSET_PATHS = "\"Croissant/Preview Content\"";
 				DEVELOPMENT_TEAM = S3QV2HC97X;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -579,7 +605,7 @@
 				CODE_SIGN_ENTITLEMENTS = Croissant/Croissant.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 250;
 				DEVELOPMENT_ASSET_PATHS = "\"Croissant/Preview Content\"";
 				DEVELOPMENT_TEAM = S3QV2HC97X;
 				ENABLE_HARDENED_RUNTIME = YES;
