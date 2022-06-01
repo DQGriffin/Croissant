@@ -1,6 +1,14 @@
 {
   "pins" : [
     {
+      "identity" : "alerttoast",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/elai950/AlertToast",
+      "state" : {
+        "revision" : "509519b5aad56fc342c473aa25182ea95c4f9e53"
+      }
+    },
+    {
       "identity" : "corexlsx",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/CoreOffice/CoreXLSX",
