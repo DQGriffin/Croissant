@@ -34,6 +34,8 @@
 		855DCAD128429BD400F2A116 /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855DCAD028429BD400F2A116 /* AboutViewModel.swift */; };
 		855DCAE928430A4600F2A116 /* ExcelIVRReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855DCAE828430A4600F2A116 /* ExcelIVRReader.swift */; };
 		855DCAEC28430ACD00F2A116 /* CoreXLSX in Frameworks */ = {isa = PBXBuildFile; productRef = 855DCAEB28430ACD00F2A116 /* CoreXLSX */; };
+		856FFBD32845B69400626595 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 856FFBD22845B69400626595 /* AlertToast */; };
+		856FFBD72845B77100626595 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856FFBD62845B77100626595 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,7 @@
 		855DCACE28429B7900F2A116 /* LibraryAttribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAttribution.swift; sourceTree = "<group>"; };
 		855DCAD028429BD400F2A116 /* AboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
 		855DCAE828430A4600F2A116 /* ExcelIVRReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelIVRReader.swift; sourceTree = "<group>"; };
+		856FFBD62845B77100626595 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				856FFBD32845B69400626595 /* AlertToast in Frameworks */,
 				855DCAEC28430ACD00F2A116 /* CoreXLSX in Frameworks */,
 				8545C325283EA6A2006B225B /* SwiftCSV in Frameworks */,
 			);
@@ -157,6 +161,7 @@
 				8545C2EF283D6C71006B225B /* PDToolbox.entitlements */,
 				8545C2EC283D6C71006B225B /* Preview Content */,
 				8545C326283ED0A8006B225B /* MainView.swift */,
+				856FFBD62845B77100626595 /* Message.swift */,
 			);
 			path = Croissant;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 			packageProductDependencies = (
 				8545C324283EA6A2006B225B /* SwiftCSV */,
 				855DCAEB28430ACD00F2A116 /* CoreXLSX */,
+				856FFBD22845B69400626595 /* AlertToast */,
 			);
 			productName = PDToolbox;
 			productReference = 8545C2E3283D6C70006B225B /* Croissant.app */;
@@ -324,6 +330,7 @@
 			packageReferences = (
 				8545C323283EA6A2006B225B /* XCRemoteSwiftPackageReference "SwiftCSV" */,
 				855DCAEA28430ACD00F2A116 /* XCRemoteSwiftPackageReference "CoreXLSX" */,
+				856FFBD12845B69400626595 /* XCRemoteSwiftPackageReference "AlertToast" */,
 			);
 			productRefGroup = 8545C2E4283D6C70006B225B /* Products */;
 			projectDirPath = "";
@@ -383,6 +390,7 @@
 				8545C314283D6CF3006B225B /* IVRMenu.swift in Sources */,
 				855DCAC82841B76C00F2A116 /* UnderConstructionView.swift in Sources */,
 				8545C32A28402C1C006B225B /* IVRToolsViewModel.swift in Sources */,
+				856FFBD72845B77100626595 /* Message.swift in Sources */,
 				85131AEE2841625500A7D597 /* SidebarView.swift in Sources */,
 				8545C316283D6DDE006B225B /* IVRKeyPress.swift in Sources */,
 				85131AF02841627F00A7D597 /* SidebarViewModel.swift in Sources */,
@@ -720,6 +728,14 @@
 				minimumVersion = 0.9.1;
 			};
 		};
+		856FFBD12845B69400626595 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast";
+			requirement = {
+				kind = revision;
+				revision = 509519b5aad56fc342c473aa25182ea95c4f9e53;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -732,6 +748,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 855DCAEA28430ACD00F2A116 /* XCRemoteSwiftPackageReference "CoreXLSX" */;
 			productName = CoreXLSX;
+		};
+		856FFBD22845B69400626595 /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 856FFBD12845B69400626595 /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
