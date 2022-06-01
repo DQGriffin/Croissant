@@ -82,8 +82,12 @@ struct ExcelIVRReader {
             while key < 10 {
                 let keyPressActionKey = "Key \(key) Action"
                 let keyPressDestinationKey = "Key \(key) Destination"
-                if ivrData.keys.contains(keyPressActionKey) && ivrData.keys.contains(keyPressDestinationKey) {
-                    let action = IVRKeyPress(key: "\(key)", actionType: getActionType(forRawActionType: ivrData[keyPressActionKey]!), destination: ivrData[keyPressDestinationKey]!)
+                if ivrData.keys.contains(keyPressActionKey) {
+                    let actionType = getActionType(forRawActionType: ivrData[keyPressActionKey]!)
+                    let destination = ivrData[keyPressDestinationKey] ?? ""
+                    
+                    
+                    let action = IVRKeyPress(key: "\(key)", actionType: actionType, destination: destination)
                     menu?.actions.append(action)
                 }
                 key += 1
