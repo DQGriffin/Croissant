@@ -14,11 +14,13 @@ class IVRToolsViewModel: ObservableObject {
     let writer = XMLWriter()
     @Published var status = ""
     @Published var error = ""
+    @Published var message = ""
     @Published var hasMenus = false
     @Published var isDone = false
     @Published var isInsertNewlineEnabled = false
     @Published var isIsolateExtensionNumberEnabled = true
     @Published var isSanitizePrompsEnabled = true
+    @Published var hasMessage = false
     var menus: [IVRMenu] = []
     
     init() {
@@ -59,18 +61,14 @@ class IVRToolsViewModel: ObservableObject {
                     isolateExtensionNumbers()
                 }
                 writeXML()
-                Task {
-                    await MainActor.run {
-                        //hasMenus = true
-                        isDone = true
-                    }
-                }
+                postMessage("Success! XML file exported to downloads folder")
             }
             catch {
                 print(error)
+                postMessage("Something went wrong when trying to read the BRD")
             }
         }
-        else {
+        else if path.path.contains("csv") {
             readCSV(atPath: path)
             if isSanitizePrompsEnabled {
                 sanitizePrompts()
@@ -79,12 +77,10 @@ class IVRToolsViewModel: ObservableObject {
                 isolateExtensionNumbers()
             }
             writeXML()
-            Task {
-                await MainActor.run {
-                    //hasMenus = true
-                    isDone = true
-                }
-            }
+            postMessage("Success! XML file exported to downloads folder")
+        }
+        else {
+            postMessage("Hmmm. That doesn't look like a BRD")
         }
     }
     
@@ -136,6 +132,15 @@ class IVRToolsViewModel: ObservableObject {
             }
             
             menuIndex += 1
+        }
+    }
+    
+    func postMessage(_ messageToPost: String) {
+        Task {
+            await MainActor.run {
+                message = messageToPost
+                hasMessage = true
+            }
         }
     }
     
