@@ -20,7 +20,7 @@ struct AboutView: View {
                     Text("Croissant")
                         .font(.title)
                         .bold()
-                    Text("Version 1.0")
+                    Text("Version 1.0 (Build \(viewModel.buildNumber))")
                         .font(.body)
                 }
                 .padding(.vertical)
