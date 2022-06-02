@@ -18,8 +18,15 @@ struct XMLWriter: IVRFileWriter {
             output += "\t<Name>\(menu.name)</Name>\n"
             output += "\t<Language>\(menu.language)</Language>\n"
             output += "\t<Prompt>\n"
-            output += "\t\t<Text>\(menu.prompt)</Text>\n"
-            output += "\t\t<TextToSpeech>true</TextToSpeech>\n"
+            if menu.isUsingTextToSpeech {
+                output += "\t\t<Text>\(menu.prompt)</Text>\n"
+                output += "\t\t<TextToSpeech>true</TextToSpeech>\n"
+            }
+            else {
+                output += "\t\t<Name>\(menu.prompt)</Name>\n"
+                output += "\t\t<Text>\(menu.prompt)</Text>\n"
+                output += "\t\t<TextToSpeech>false</TextToSpeech>\n"
+            }
             output += "\t</Prompt>\n"
             output += "<CallHandling>\n"
             

@@ -78,6 +78,10 @@ struct ExcelIVRReader {
             
             menu = IVRMenu(extensionNumber: ivrData["Menu Ext"]!, name: ivrData["Menu Name"]!, prompt: ivrData["Prompt"]!, actions: [])
             
+            if menu!.prompt.lowercased().contains(".wav") || menu!.prompt.lowercased().contains(".mp3") {
+                menu?.isUsingTextToSpeech = false
+            }
+            
             var key = 0
             while key < 10 {
                 let keyPressActionKey = "Key \(key) Action"

@@ -25,6 +25,10 @@ struct IVRReader {
                 let prompt = csv.namedRows[index]["Prompt Name/Script"]!
                 var menu = IVRMenu(extensionNumber: extensionNumber, name: name, prompt: prompt, actions: [])
                 
+                if menu.prompt.lowercased().contains(".wav") || menu.prompt.lowercased().contains(".mp3") {
+                    menu.isUsingTextToSpeech = false
+                }
+                
                 var keyPress = 0
                 
                 while keyPress < 10 {
