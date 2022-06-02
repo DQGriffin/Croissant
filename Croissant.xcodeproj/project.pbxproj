@@ -247,7 +247,6 @@
 				8545C2DF283D6C70006B225B /* Sources */,
 				8545C2E0283D6C70006B225B /* Frameworks */,
 				8545C2E1283D6C70006B225B /* Resources */,
-				853FF39D2847DC7C00905DD8 /* Increment Build Number */,
 			);
 			buildRules = (
 			);
@@ -372,27 +371,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		853FF39D2847DC7C00905DD8 /* Increment Build Number */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Increment Build Number";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbuildNumber=$(xcodebuild -showBuildSettings | grep CURRENT_PROJECT_VERSION | tr -d 'CURRENT_PROJECT_VERSION =')\nbuildNumber=`echo $buildNumber +1|bc`\nxcrun agvtool new-version $buildNumber\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8545C2DF283D6C70006B225B /* Sources */ = {
@@ -576,10 +554,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Croissant/Croissant.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 309;
+				CURRENT_PROJECT_VERSION = 340;
 				DEVELOPMENT_ASSET_PATHS = "\"Croissant/Preview Content\"";
 				DEVELOPMENT_TEAM = S3QV2HC97X;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -593,6 +571,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dquavius.Croissant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -604,10 +583,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Croissant/Croissant.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 309;
+				CURRENT_PROJECT_VERSION = 340;
 				DEVELOPMENT_ASSET_PATHS = "\"Croissant/Preview Content\"";
 				DEVELOPMENT_TEAM = S3QV2HC97X;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -621,6 +600,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dquavius.Croissant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -632,7 +612,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 309;
+				CURRENT_PROJECT_VERSION = 340;
 				DEVELOPMENT_TEAM = S3QV2HC97X;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
@@ -651,7 +631,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 309;
+				CURRENT_PROJECT_VERSION = 340;
 				DEVELOPMENT_TEAM = S3QV2HC97X;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
@@ -669,7 +649,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 309;
+				CURRENT_PROJECT_VERSION = 340;
 				DEVELOPMENT_TEAM = S3QV2HC97X;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
@@ -686,7 +666,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 309;
+				CURRENT_PROJECT_VERSION = 340;
 				DEVELOPMENT_TEAM = S3QV2HC97X;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
