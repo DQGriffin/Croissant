@@ -52,7 +52,6 @@ class CFRenderer {
                 offset += RenderDefaults.horizontalPadding
                 
                 ctx.cgContext.move(to: CGPoint(x: rect.minX + (rect.width / 2), y: rect.minY + rect.height))
-//                ctx.cgContext.addLine(to: CGPoint(x: menuRenderable.x + (menuRenderable.width / 2), y: menuRenderable.y))
                 ctx.cgContext.addLine(to: CGPoint(x: rect.minX + (rect.width / 2), y: (rect.minY + rect.height + CGFloat((RenderDefaults.verticalPadding / 3)) )))
                 
                 index += 1
@@ -72,6 +71,21 @@ class CFRenderer {
             let rectangle = CGRect(x: menuRenderable.x, y: menuRenderable.y, width: menuRenderable.width, height: menuRenderable.height)
             ctx.cgContext.addRect(rectangle)
             ctx.cgContext.drawPath(using: .fillStroke)
+            
+            var i = 0
+            while i < prerenderer.renderables.count {
+                let ren = prerenderer.renderables[i]
+                
+                // Add text
+                let paragraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.alignment = .left
+                let attrs = [NSAttributedString.Key.font: NSFont(name: "HelveticaNeue-Thin", size: 8)!, NSAttributedString.Key.paragraphStyle: paragraphStyle]
+                ren.label.draw(with: CGRect(x: ren.x + 5, y: ren.y - 5, width: 448, height: 50), options: .usesLineFragmentOrigin, attributes: attrs, context: nil)
+                ren.extensionNumber.draw(with: CGRect(x: ren.x + 5, y: ren.y - 35, width: 448, height: 50), options: .usesLineFragmentOrigin, attributes: attrs, context: nil)
+                
+                i += 1
+            }
+            
         }
         
         if let pngData = image.png {
