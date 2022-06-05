@@ -19,6 +19,7 @@ class CFRenderable {
     var yOffset = 0
     var xOffset = 0
     var anchorPoint: CGPoint?
+    var key: String?
     
     init(label name: String, extensionNumber number: String, positionRelativeTo anchor: CFRenderable? = nil) {
         x = 0
