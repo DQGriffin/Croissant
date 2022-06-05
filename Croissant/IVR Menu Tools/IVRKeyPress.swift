@@ -12,6 +12,7 @@ struct IVRKeyPress: Codable, Identifiable {
     var key: String
     var actionType: String
     var destination: String
+    var label: String?
 }
 
 enum IVRActionType: Int, Codable {
