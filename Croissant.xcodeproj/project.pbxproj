@@ -37,6 +37,11 @@
 		855DCAEC28430ACD00F2A116 /* CoreXLSX in Frameworks */ = {isa = PBXBuildFile; productRef = 855DCAEB28430ACD00F2A116 /* CoreXLSX */; };
 		856FFBD32845B69400626595 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 856FFBD22845B69400626595 /* AlertToast */; };
 		856FFBD72845B77100626595 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856FFBD62845B77100626595 /* Message.swift */; };
+		85A92424284A5B28005E7B3C /* CallFlowPreRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A92423284A5B28005E7B3C /* CallFlowPreRenderer.swift */; };
+		85A92426284A620C005E7B3C /* CFRenderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A92425284A620C005E7B3C /* CFRenderable.swift */; };
+		85A92428284A62FE005E7B3C /* RenderDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A92427284A62FE005E7B3C /* RenderDefaults.swift */; };
+		85A9242A284A652D005E7B3C /* CFRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A92429284A652D005E7B3C /* CFRenderer.swift */; };
+		85A9242D284ABD8B005E7B3C /* GraphicsRenderer in Frameworks */ = {isa = PBXBuildFile; productRef = 85A9242C284ABD8B005E7B3C /* GraphicsRenderer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +94,10 @@
 		855DCAD028429BD400F2A116 /* AboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
 		855DCAE828430A4600F2A116 /* ExcelIVRReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelIVRReader.swift; sourceTree = "<group>"; };
 		856FFBD62845B77100626595 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		85A92423284A5B28005E7B3C /* CallFlowPreRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallFlowPreRenderer.swift; sourceTree = "<group>"; };
+		85A92425284A620C005E7B3C /* CFRenderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFRenderable.swift; sourceTree = "<group>"; };
+		85A92427284A62FE005E7B3C /* RenderDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderDefaults.swift; sourceTree = "<group>"; };
+		85A92429284A652D005E7B3C /* CFRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFRenderer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85A9242D284ABD8B005E7B3C /* GraphicsRenderer in Frameworks */,
 				856FFBD32845B69400626595 /* AlertToast in Frameworks */,
 				855DCAEC28430ACD00F2A116 /* CoreXLSX in Frameworks */,
 				8545C325283EA6A2006B225B /* SwiftCSV in Frameworks */,
@@ -152,6 +162,7 @@
 		8545C2E5283D6C70006B225B /* Croissant */ = {
 			isa = PBXGroup;
 			children = (
+				85A92422284A5B09005E7B3C /* Call Flow Rendering */,
 				855DCAC92842478A00F2A116 /* Croissant.entitlements */,
 				85131AF1284163B500A7D597 /* Models */,
 				8545C32B28405AA4006B225B /* Views */,
@@ -237,6 +248,17 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		85A92422284A5B09005E7B3C /* Call Flow Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				85A92423284A5B28005E7B3C /* CallFlowPreRenderer.swift */,
+				85A92425284A620C005E7B3C /* CFRenderable.swift */,
+				85A92427284A62FE005E7B3C /* RenderDefaults.swift */,
+				85A92429284A652D005E7B3C /* CFRenderer.swift */,
+			);
+			path = "Call Flow Rendering";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -257,6 +279,7 @@
 				8545C324283EA6A2006B225B /* SwiftCSV */,
 				855DCAEB28430ACD00F2A116 /* CoreXLSX */,
 				856FFBD22845B69400626595 /* AlertToast */,
+				85A9242C284ABD8B005E7B3C /* GraphicsRenderer */,
 			);
 			productName = PDToolbox;
 			productReference = 8545C2E3283D6C70006B225B /* Croissant.app */;
@@ -334,6 +357,7 @@
 				8545C323283EA6A2006B225B /* XCRemoteSwiftPackageReference "SwiftCSV" */,
 				855DCAEA28430ACD00F2A116 /* XCRemoteSwiftPackageReference "CoreXLSX" */,
 				856FFBD12845B69400626595 /* XCRemoteSwiftPackageReference "AlertToast" */,
+				85A9242B284ABD8B005E7B3C /* XCRemoteSwiftPackageReference "GraphicsRenderer" */,
 			);
 			productRefGroup = 8545C2E4283D6C70006B225B /* Products */;
 			projectDirPath = "";
@@ -379,14 +403,18 @@
 			files = (
 				8545C31A283D8CEF006B225B /* IVRFileWriter.swift in Sources */,
 				8545C327283ED0A8006B225B /* MainView.swift in Sources */,
+				85A92426284A620C005E7B3C /* CFRenderable.swift in Sources */,
 				855DCAD128429BD400F2A116 /* AboutViewModel.swift in Sources */,
 				855DCACB28429A5500F2A116 /* AboutView.swift in Sources */,
 				8545C32D28405C82006B225B /* KeyPressView.swift in Sources */,
 				8545C318283D700C006B225B /* IVRReader.swift in Sources */,
+				85A9242A284A652D005E7B3C /* CFRenderer.swift in Sources */,
 				8545C2E9283D6C70006B225B /* ContentView.swift in Sources */,
 				8545C31C283D90C3006B225B /* XMLWriter.swift in Sources */,
 				855DCAE928430A4600F2A116 /* ExcelIVRReader.swift in Sources */,
+				85A92424284A5B28005E7B3C /* CallFlowPreRenderer.swift in Sources */,
 				853FF39C2847B53400905DD8 /* Extensions.swift in Sources */,
+				85A92428284A62FE005E7B3C /* RenderDefaults.swift in Sources */,
 				855DCACF28429B7900F2A116 /* LibraryAttribution.swift in Sources */,
 				8545C2E7283D6C70006B225B /* PDToolboxApp.swift in Sources */,
 				8545C32F28406585006B225B /* MenuView.swift in Sources */,
@@ -744,6 +772,14 @@
 				revision = 509519b5aad56fc342c473aa25182ea95c4f9e53;
 			};
 		};
+		85A9242B284ABD8B005E7B3C /* XCRemoteSwiftPackageReference "GraphicsRenderer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/shaps80/GraphicsRenderer.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -761,6 +797,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 856FFBD12845B69400626595 /* XCRemoteSwiftPackageReference "AlertToast" */;
 			productName = AlertToast;
+		};
+		85A9242C284ABD8B005E7B3C /* GraphicsRenderer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 85A9242B284ABD8B005E7B3C /* XCRemoteSwiftPackageReference "GraphicsRenderer" */;
+			productName = GraphicsRenderer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
