@@ -16,7 +16,7 @@ class CallFlowPreRenderer {
         for renderable in renderables {
             calculatedWidth += (renderable.width + (RenderDefaults.horizontalPadding / 2))
         }
-        return calculatedWidth
+        return calculatedWidth >= height ? calculatedWidth : height
     }
     
     var height = 500
@@ -30,7 +30,8 @@ class CallFlowPreRenderer {
         createRenderables(menu: menus)
     }
     
-    private func createRenderables(menu: IVRMenu) {
+    func createRenderables(menu: IVRMenu) {
+        renderables.removeAll()
         let menuRenderable = CFRenderable(label: menu.name, extensionNumber: menu.extensionNumber)
         renderables.append(menuRenderable)
         
@@ -39,6 +40,21 @@ class CallFlowPreRenderer {
             var renderable = CFRenderable(label: keyPress.destination, extensionNumber: keyPress.destination, positionRelativeTo: menuRenderable)
             renderable.yOffset = RenderDefaults.verticalPadding
             renderable.xOffset = RenderDefaults.horizontalPadding
+            if keyPress.actionType == "ConnectToDialByNameDirectory" {
+                renderable.label = "Dial-by-Name Directory"
+            }
+            else if keyPress.actionType == "ForwardToExternal" && keyPress.label == "" {
+                renderable.label = "External Transfer"
+            }
+            else if keyPress.label == "" {
+                renderable.label = keyPress.destination
+            }
+            else {
+                renderable.label = keyPress.label ?? "???"
+            }
+            
+            renderable.key = keyPress.key
+            
             renderables.append(renderable)
             horizontalOffset += RenderDefaults.horizontalPadding
         }
