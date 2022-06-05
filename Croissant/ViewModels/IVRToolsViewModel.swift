@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import GraphicsRenderer
+
 
 class IVRToolsViewModel: ObservableObject {
     
@@ -53,6 +55,7 @@ class IVRToolsViewModel: ObservableObject {
         if path.path.contains("xlsx") {
             do {
                 menus = try excelReader.readExcel(atPath: path)
+                setLabelsForKeyPresses()
                 if isSanitizePrompsEnabled {
                     sanitizePrompts()
                 }
@@ -69,6 +72,7 @@ class IVRToolsViewModel: ObservableObject {
         }
         else if path.path.contains("csv") {
             readCSV(atPath: path)
+            setLabelsForKeyPresses()
             if isSanitizePrompsEnabled {
                 sanitizePrompts()
             }
@@ -81,6 +85,7 @@ class IVRToolsViewModel: ObservableObject {
         else {
             postMessage("Hmmm. That doesn't look like a BRD")
         }
+        getImages(forMenus: menus)
     }
     
     func transformCSV(atPath path: URL) {
@@ -98,6 +103,14 @@ class IVRToolsViewModel: ObservableObject {
                 isDone = true
             }
         }
+    }
+    
+    func getImages(forMenus: [IVRMenu]) {
+        
+        for menu in menus {
+            let renderer = CFRenderer(menu: menu)
+        }
+        
     }
     
     func sanitizePrompts() {
@@ -127,6 +140,26 @@ class IVRToolsViewModel: ObservableObject {
             
             while actionIndex < menus[menuIndex].actions.count {
                 menus[menuIndex].actions[actionIndex].destination = menus[menuIndex].actions[actionIndex].destination.filter("0123456789".contains)
+                actionIndex += 1
+            }
+            
+            menuIndex += 1
+        }
+    }
+    
+    func setLabelsForKeyPresses() {
+        var menuIndex = 0
+        
+        while menuIndex < menus.count {
+            var actionIndex = 0
+            
+            while actionIndex < menus[menuIndex].actions.count {
+                menus[menuIndex].actions[actionIndex].label = menus[menuIndex].actions[actionIndex].destination.filter("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ".contains)
+                
+                while menus[menuIndex].actions[actionIndex].label!.starts(with: " ") {
+                    menus[menuIndex].actions[actionIndex].label = String( menus[menuIndex].actions[actionIndex].label!.dropFirst())
+                }
+                
                 actionIndex += 1
             }
             
