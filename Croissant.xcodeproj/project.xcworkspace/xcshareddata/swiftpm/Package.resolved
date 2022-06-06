@@ -18,6 +18,15 @@
       }
     },
     {
+      "identity" : "graphicsrenderer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/shaps80/GraphicsRenderer.git",
+      "state" : {
+        "revision" : "fa9b28096ea13eb59333a02d616244482ad6039f",
+        "version" : "1.4.4"
+      }
+    },
+    {
       "identity" : "swiftcsv",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/swiftcsv/SwiftCSV.git",
