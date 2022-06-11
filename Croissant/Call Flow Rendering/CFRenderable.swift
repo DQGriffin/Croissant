@@ -20,15 +20,35 @@ class CFRenderable {
     var xOffset = 0
     var anchorPoint: CGPoint?
     var key: String?
+    var type: IVRActionType?
     
-    init(label name: String, extensionNumber number: String, positionRelativeTo anchor: CFRenderable? = nil) {
+    init(label name: String, extensionNumber number: String, actionType: String? = nil, positionRelativeTo anchor: CFRenderable? = nil) {
         x = 0
         y = 0
         height = RenderDefaults.height
         width = RenderDefaults.width
         extensionNumber = number
         label = name
+        type = .forwardToExtension
+        if let safeActionType = actionType {
+            type = getActionType(actionTypeString: safeActionType)
+        }
         calculateAnchorPoint()
+    }
+    
+    func getActionType(actionTypeString: String) -> IVRActionType {
+        switch actionTypeString {
+        case "ConnectToDialByNameDirectory":
+            return.dialByNameDirectory
+        case "ForwardToExternal":
+            return .forwardToExternal
+        case "ForwardToVoiceMail":
+            return .forwardToVoicemail
+        case "ForwardToExtension":
+            return .forwardToExtension
+        default:
+            return .forwardToExtension
+        }
     }
     
     func calculateAnchorPoint() {

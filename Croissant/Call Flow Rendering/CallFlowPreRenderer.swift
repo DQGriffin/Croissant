@@ -37,7 +37,7 @@ class CallFlowPreRenderer {
         
         var horizontalOffset = -220
         for keyPress in menu.actions {
-            var renderable = CFRenderable(label: keyPress.destination, extensionNumber: keyPress.destination, positionRelativeTo: menuRenderable)
+            var renderable = CFRenderable(label: keyPress.destination, extensionNumber: keyPress.destination, actionType: keyPress.actionType, positionRelativeTo: menuRenderable)
             renderable.yOffset = RenderDefaults.verticalPadding
             renderable.xOffset = RenderDefaults.horizontalPadding
             if keyPress.actionType == "ConnectToDialByNameDirectory" {
@@ -51,6 +51,22 @@ class CallFlowPreRenderer {
             }
             else {
                 renderable.label = keyPress.label ?? "???"
+            }
+            
+            if keyPress.actionType == "ConnectToDialByNameDirectory" {
+                renderable.type = .dialByNameDirectory
+            }
+            else if keyPress.actionType == "ForwardToExternal" {
+                renderable.type = .forwardToExternal
+            }
+            else if keyPress.actionType == "ForwardToVoiceMail" {
+                renderable.type = .forwardToVoicemail
+            }
+            else if keyPress.actionType == "ForwardToExtension" {
+                renderable.type = .forwardToExtension
+            }
+            else {
+                renderable.type = .forwardToExtension
             }
             
             renderable.key = keyPress.key
