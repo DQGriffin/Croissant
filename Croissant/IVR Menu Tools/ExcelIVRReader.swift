@@ -38,7 +38,7 @@ struct ExcelIVRReader {
                             for c in row.cells {
                                 if let value = c.value {
                                     let rowIndex = "\(c.reference)".filter("ABCDEFGHIJKLMNOPQRSTUVWXYZ".contains)
-                                    rowData += "\(columnMap[rowIndex]!):\(c.stringValue(sharedStrings)!) ^ "
+                                    rowData += "\(columnMap[rowIndex]!);\(c.stringValue(sharedStrings)!) ^ "
                                 }
                             }
                             if let menu = createMenu(fromString: rowData) {
@@ -67,7 +67,7 @@ struct ExcelIVRReader {
                     ivrDataPoints[index] = ivrDataPoints[index].dropFirst()
                 }
                 
-                let dataPoint = ivrDataPoints[index].split(separator: ":")
+                let dataPoint = ivrDataPoints[index].split(separator: ";")
                 
                 if dataPoint.count > 0 {
                     ivrData[String(dataPoint[0])] = String(dataPoint[1])
