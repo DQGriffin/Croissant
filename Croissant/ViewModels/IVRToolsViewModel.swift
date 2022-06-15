@@ -117,17 +117,19 @@ class IVRToolsViewModel: ObservableObject {
         var index = 0
         
         while index < menus.count {
-            menus[index].prompt = menus[index].prompt.replacingOccurrences(of: "_", with: "-")
-            menus[index].prompt = menus[index].prompt.replacingOccurrences(of: "*", with: "star")
-            menus[index].prompt = menus[index].prompt.replacingOccurrences(of: "#", with: "pound")
-            menus[index].prompt = menus[index].prompt.replacingOccurrences(of: "@", with: "at")
-            menus[index].prompt = menus[index].prompt.replacingOccurrences(of: "&", with: "and")
-            menus[index].prompt = menus[index].prompt.replacingOccurrences(of: "(", with: "")
-            menus[index].prompt = menus[index].prompt.replacingOccurrences(of: ")", with: "")
-            menus[index].prompt = menus[index].prompt.replacingOccurrences(of: "%", with: "percent")
-            menus[index].prompt = menus[index].prompt.replacingOccurrences(of: "$", with: "")
-            menus[index].prompt = menus[index].prompt.replacingOccurrences(of: "!", with: ".")
-            menus[index].prompt = menus[index].prompt.replacingOccurrences(of: "?", with: ".")
+            if menus[index].isUsingTextToSpeech {
+                menus[index].prompt = menus[index].prompt.replacingOccurrences(of: "_", with: "-")
+                menus[index].prompt = menus[index].prompt.replacingOccurrences(of: "*", with: "star")
+                menus[index].prompt = menus[index].prompt.replacingOccurrences(of: "#", with: "pound")
+                menus[index].prompt = menus[index].prompt.replacingOccurrences(of: "@", with: "at")
+                menus[index].prompt = menus[index].prompt.replacingOccurrences(of: "&", with: "and")
+                menus[index].prompt = menus[index].prompt.replacingOccurrences(of: "(", with: "")
+                menus[index].prompt = menus[index].prompt.replacingOccurrences(of: ")", with: "")
+                menus[index].prompt = menus[index].prompt.replacingOccurrences(of: "%", with: "percent")
+                menus[index].prompt = menus[index].prompt.replacingOccurrences(of: "$", with: "")
+                menus[index].prompt = menus[index].prompt.replacingOccurrences(of: "!", with: ".")
+                menus[index].prompt = menus[index].prompt.replacingOccurrences(of: "?", with: ".")
+            }
             index += 1
         }
     }
