@@ -37,6 +37,7 @@
 		855DCAEC28430ACD00F2A116 /* CoreXLSX in Frameworks */ = {isa = PBXBuildFile; productRef = 855DCAEB28430ACD00F2A116 /* CoreXLSX */; };
 		856FFBD32845B69400626595 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 856FFBD22845B69400626595 /* AlertToast */; };
 		856FFBD72845B77100626595 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856FFBD62845B77100626595 /* Message.swift */; };
+		85A551F4285AA50E003496E3 /* AuditWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A551F3285AA50E003496E3 /* AuditWriter.swift */; };
 		85A92424284A5B28005E7B3C /* CallFlowPreRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A92423284A5B28005E7B3C /* CallFlowPreRenderer.swift */; };
 		85A92426284A620C005E7B3C /* CFRenderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A92425284A620C005E7B3C /* CFRenderable.swift */; };
 		85A92428284A62FE005E7B3C /* RenderDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A92427284A62FE005E7B3C /* RenderDefaults.swift */; };
@@ -96,6 +97,7 @@
 		855DCAD028429BD400F2A116 /* AboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
 		855DCAE828430A4600F2A116 /* ExcelIVRReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelIVRReader.swift; sourceTree = "<group>"; };
 		856FFBD62845B77100626595 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		85A551F3285AA50E003496E3 /* AuditWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditWriter.swift; sourceTree = "<group>"; };
 		85A92423284A5B28005E7B3C /* CallFlowPreRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallFlowPreRenderer.swift; sourceTree = "<group>"; };
 		85A92425284A620C005E7B3C /* CFRenderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFRenderable.swift; sourceTree = "<group>"; };
 		85A92427284A62FE005E7B3C /* RenderDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderDefaults.swift; sourceTree = "<group>"; };
@@ -220,12 +222,13 @@
 		8545C312283D6CD5006B225B /* IVR Menu Tools */ = {
 			isa = PBXGroup;
 			children = (
-				8545C313283D6CF3006B225B /* IVRMenu.swift */,
-				8545C315283D6DDE006B225B /* IVRKeyPress.swift */,
-				8545C317283D700C006B225B /* IVRReader.swift */,
-				8545C319283D8CEF006B225B /* IVRFileWriter.swift */,
-				8545C31B283D90C3006B225B /* XMLWriter.swift */,
 				855DCAE828430A4600F2A116 /* ExcelIVRReader.swift */,
+				8545C319283D8CEF006B225B /* IVRFileWriter.swift */,
+				8545C315283D6DDE006B225B /* IVRKeyPress.swift */,
+				8545C313283D6CF3006B225B /* IVRMenu.swift */,
+				8545C317283D700C006B225B /* IVRReader.swift */,
+				8545C31B283D90C3006B225B /* XMLWriter.swift */,
+				85A551F3285AA50E003496E3 /* AuditWriter.swift */,
 			);
 			path = "IVR Menu Tools";
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				8545C32A28402C1C006B225B /* IVRToolsViewModel.swift in Sources */,
 				856FFBD72845B77100626595 /* Message.swift in Sources */,
 				85131AEE2841625500A7D597 /* SidebarView.swift in Sources */,
+				85A551F4285AA50E003496E3 /* AuditWriter.swift in Sources */,
 				8545C316283D6DDE006B225B /* IVRKeyPress.swift in Sources */,
 				85131AF02841627F00A7D597 /* SidebarViewModel.swift in Sources */,
 				85131AF5284167C300A7D597 /* RootView.swift in Sources */,
