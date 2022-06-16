@@ -36,15 +36,6 @@
       }
     },
     {
-      "identity" : "xmlcoder",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/maxdesiatov/XMLCoder.git",
-      "state" : {
-        "revision" : "ac411bd6ab342780be0dfe6f679410f791d751d9",
-        "version" : "0.11.1"
-      }
-    },
-    {
       "identity" : "zipfoundation",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/weichsel/ZIPFoundation.git",
