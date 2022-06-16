@@ -84,8 +84,11 @@ class IVRToolsViewModel: ObservableObject {
             writeXML()
             postMessage("Success! XML file exported to downloads folder")
         }
+        else if path.path.contains(".xml") {
+            let xmlReader = XMLReader(path: path.path)
+        }
         else {
-            postMessage("Hmmm. That doesn't look like a BRD")
+            postMessage("Hmmm. I don't know what to do with that file.")
         }
         getImages(forMenus: menus)
     }
