@@ -11,9 +11,9 @@ import XMLCoder
 struct XMLReader {
     var ivr: MultiLevelIVR
     
-    init() {
+    init(path: String) {
         do {
-            let xmlData = try String(contentsOfFile: "/Users/dquavius/Downloads/Auto-Receptionist.xml")
+            let xmlData = try String(contentsOfFile: path)
             ivr = try! XMLDecoder().decode(MultiLevelIVR.self, from: Data(xmlData.utf8))
             
             print(ivr.menus.count)
