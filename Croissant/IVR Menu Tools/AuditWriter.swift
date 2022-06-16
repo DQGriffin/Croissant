@@ -25,7 +25,20 @@ struct AuditWriter {
         csvData += "Key 0 Action,Key 0 Destination,"
         csvData += "\n"
         generateAudit()
-        print(csvData)
+    }
+    
+    init(multiLevelIVR: MultiLevelIVR) {
+        menus = []
+        csvData = "Menu Name,Menu Ext,Prompt Name/Script,"
+        
+        var keyPressIndex = 1
+        while keyPressIndex < 10 {
+            csvData += "Key \(keyPressIndex) Action,Key \(keyPressIndex) Destination,"
+            keyPressIndex += 1
+        }
+        csvData += "Key 0 Action,Key 0 Destination,"
+        csvData += "\n"
+        generateAuditForMultiLevelIVR(multiLevelIVR)
     }
     
     mutating func generateAudit() {
@@ -61,6 +74,42 @@ struct AuditWriter {
         }
     }
     
+    mutating func generateAuditForMultiLevelIVR(_ ivr: MultiLevelIVR) {
+        for menu in ivr.menus {
+            csvData += "\(menu.name),\(menu.extensionNumber),\(menu.prompt.text),"
+            
+            var actionMap: [String:String] = [:]
+            
+            if let callHandling = menu.callHandling {
+                for action in callHandling.keyPresses {
+                    actionMap["\(action.key)"] = "\(action.action),\(action.destination ?? ""),"
+                }
+            }
+            
+            var index = 1
+            while index < 10 {
+                if actionMap.keys.contains("\(index)") {
+                    csvData += actionMap["\(index)"]!
+                }
+                else {
+                    csvData += ",,"
+                }
+                index += 1
+            }
+            
+            if let callHandling = menu.callHandling {
+                if callHandling.keyPresses.count > 0 {
+                    for action in callHandling.keyPresses {
+                        if action.key == 0 {
+                            csvData += "\(action.action),\(action.destination ?? ""),"
+                        }
+                    }
+                }
+            }
+            csvData += "\n"
+        }
+    }
+    
     func write() {
         let manager = FileManager()
         var path = manager.urls(for: .downloadsDirectory, in: .userDomainMask)[0]
@@ -72,7 +121,19 @@ struct AuditWriter {
         catch {
             print("Failed to write audit file")
         }
+    }
+    
+    func writeIVR() {
+        let manager = FileManager()
+        var path = manager.urls(for: .downloadsDirectory, in: .userDomainMask)[0]
+        path.appendPathComponent("Audit - XML.csv")
         
+        do {
+            try csvData.write(to: path, atomically: false, encoding: .utf8)
+        }
+        catch {
+            print("Failed to write audit file")
+        }
     }
     
 }
