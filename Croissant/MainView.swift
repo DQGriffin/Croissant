@@ -34,7 +34,6 @@ struct MainView: View {
             .padding()
             if viewModel.isDone {
                 Button {
-                    //isShowingAudit = true
                     isShowingToast = true
                 } label: {
                     Text("View Audit")
@@ -62,11 +61,9 @@ struct MainView: View {
         .toast(isPresenting: $viewModel.hasMessage, duration: 5, tapToDismiss: false, offsetY: 15, alert: {
             AlertToast(displayMode: .hud, type: .regular, title: viewModel.message)
         }, onTap: {
-            print("Toast clicked")
+            
         }, completion: {
-            //isShowingToast = false
             viewModel.hasMessage = false
-            print("Toast finished")
         })
     }
 }

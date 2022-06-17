@@ -35,7 +35,6 @@ struct RootView: View {
             ToolbarItem(placement: ToolbarItemPlacement.status) {
                 Button {
                     isShowingAboutView.toggle()
-                    print("Toggle")
                 } label: {
                     Label("About Croissant", systemImage: isShowingAboutView ? "x.circle" : "info.circle")
                 }
