@@ -14,8 +14,8 @@ class SidebarViewModel: ObservableObject {
     init() {
         options = []
         options.append(SidebarCategory(category: "IVR Tools"))
-        options.append(SidebarCategory(category: "SIP Credentials Tool"))
-        options.append(SidebarCategory(category: "Custom Config Generator"))
+        //options.append(SidebarCategory(category: "SIP Credentials Tool"))
+        //options.append(SidebarCategory(category: "Custom Config Generator"))
     }
     
     @ViewBuilder
