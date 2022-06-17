@@ -11,6 +11,7 @@
 		85131AF02841627F00A7D597 /* SidebarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85131AEF2841627F00A7D597 /* SidebarViewModel.swift */; };
 		85131AF3284163C700A7D597 /* SidebarCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85131AF2284163C700A7D597 /* SidebarCategory.swift */; };
 		85131AF5284167C300A7D597 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85131AF4284167C300A7D597 /* RootView.swift */; };
+		852107ED285C136E00FEB122 /* AcknowledgementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852107EC285C136E00FEB122 /* AcknowledgementsView.swift */; };
 		853FF39C2847B53400905DD8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853FF39B2847B53400905DD8 /* Extensions.swift */; };
 		8545C2E7283D6C70006B225B /* PDToolboxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545C2E6283D6C70006B225B /* PDToolboxApp.swift */; };
 		8545C2E9283D6C70006B225B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545C2E8283D6C70006B225B /* ContentView.swift */; };
@@ -77,6 +78,7 @@
 		85131AEF2841627F00A7D597 /* SidebarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewModel.swift; sourceTree = "<group>"; };
 		85131AF2284163C700A7D597 /* SidebarCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarCategory.swift; sourceTree = "<group>"; };
 		85131AF4284167C300A7D597 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		852107EC285C136E00FEB122 /* AcknowledgementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsView.swift; sourceTree = "<group>"; };
 		853FF39B2847B53400905DD8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8545C2E3283D6C70006B225B /* Croissant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Croissant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8545C2E6283D6C70006B225B /* PDToolboxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDToolboxApp.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				85131AF4284167C300A7D597 /* RootView.swift */,
 				855DCAC72841B76B00F2A116 /* UnderConstructionView.swift */,
 				855DCACA28429A5500F2A116 /* AboutView.swift */,
+				852107EC285C136E00FEB122 /* AcknowledgementsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				85A92426284A620C005E7B3C /* CFRenderable.swift in Sources */,
 				855DCAD128429BD400F2A116 /* AboutViewModel.swift in Sources */,
 				855DCACB28429A5500F2A116 /* AboutView.swift in Sources */,
+				852107ED285C136E00FEB122 /* AcknowledgementsView.swift in Sources */,
 				8545C32D28405C82006B225B /* KeyPressView.swift in Sources */,
 				8545C318283D700C006B225B /* IVRReader.swift in Sources */,
 				85A55206285AEA5A003496E3 /* XMLParsing.swift in Sources */,
