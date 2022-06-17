@@ -81,7 +81,7 @@
 		8545C2E3283D6C70006B225B /* Croissant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Croissant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8545C2E6283D6C70006B225B /* PDToolboxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDToolboxApp.swift; sourceTree = "<group>"; };
 		8545C2E8283D6C70006B225B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		8545C2EA283D6C71006B225B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8545C2EA283D6C71006B225B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Croissant/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		8545C2ED283D6C71006B225B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8545C2EF283D6C71006B225B /* PDToolbox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PDToolbox.entitlements; sourceTree = "<group>"; };
 		8545C2F4283D6C71006B225B /* CroissantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CroissantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -645,7 +645,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 340;
+				CURRENT_PROJECT_VERSION = 350;
 				DEVELOPMENT_ASSET_PATHS = "\"Croissant/Preview Content\"";
 				DEVELOPMENT_TEAM = S3QV2HC97X;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -674,7 +674,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 340;
+				CURRENT_PROJECT_VERSION = 350;
 				DEVELOPMENT_ASSET_PATHS = "\"Croissant/Preview Content\"";
 				DEVELOPMENT_TEAM = S3QV2HC97X;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -700,7 +700,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 340;
+				CURRENT_PROJECT_VERSION = 350;
 				DEVELOPMENT_TEAM = S3QV2HC97X;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
@@ -719,7 +719,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 340;
+				CURRENT_PROJECT_VERSION = 350;
 				DEVELOPMENT_TEAM = S3QV2HC97X;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
@@ -737,7 +737,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 340;
+				CURRENT_PROJECT_VERSION = 350;
 				DEVELOPMENT_TEAM = S3QV2HC97X;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
@@ -754,7 +754,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 340;
+				CURRENT_PROJECT_VERSION = 350;
 				DEVELOPMENT_TEAM = S3QV2HC97X;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
