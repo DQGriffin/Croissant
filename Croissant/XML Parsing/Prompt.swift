@@ -8,7 +8,7 @@
 import Foundation
 
 struct Prompt: Codable {
-    var text: String
+    var text: String?
     var name: String?
     var isUsingTextToSpeech: Bool
     
