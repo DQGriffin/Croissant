@@ -35,7 +35,7 @@ struct AboutView: View {
                         Text("Croissant")
                             .font(.title)
                             .bold()
-                        Text("Version 0.9.1 (Build \(viewModel.buildNumber))")
+                        Text("Version 0.9.2 (Build \(viewModel.buildNumber))")
                             .font(.body)
                     }
                     .padding(.vertical)
