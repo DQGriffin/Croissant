@@ -11,6 +11,7 @@ struct AboutView: View {
     
     let viewModel = AboutViewModel()
     @Binding var isPresented: Bool
+    @State var isShowingAttributions = false
     
     var body: some View {
         HStack(alignment: .top) {
@@ -41,12 +42,12 @@ struct AboutView: View {
                         .font(.caption)
                     HStack {
                         Button {
-                            
+                            isShowingAttributions = true
                         } label: {
                             Text("Acknowledgements")
                         }
                         Button {
-
+                            
                         } label: {
                             Text("Give Feedback")
                         }
@@ -57,6 +58,9 @@ struct AboutView: View {
                 }
                 .padding(.trailing)
             }
+            .sheet(isPresented: $isShowingAttributions, content: {
+                AcknowledgementsView(viewModel: viewModel, isPresented: $isShowingAttributions)
+            })
             .frame(minWidth: 200, minHeight: 200)
             .frame(maxWidth: 400, maxHeight: 200)
         }
