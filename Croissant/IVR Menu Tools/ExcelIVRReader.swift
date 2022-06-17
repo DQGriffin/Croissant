@@ -76,7 +76,7 @@ struct ExcelIVRReader {
                 index += 1
             }
             
-            menu = IVRMenu(extensionNumber: ivrData["Menu Ext"]!, name: ivrData["Menu Name"]!, prompt: ivrData["Prompt"]!, actions: [])
+            menu = IVRMenu(extensionNumber: ivrData["Menu Ext"]!, name: ivrData["Menu Name"]!, prompt: ivrData["Prompt"]!.components(separatedBy: .newlines).joined(), actions: [])
             
             if menu!.prompt.lowercased().contains(".wav") || menu!.prompt.lowercased().contains(".mp3") {
                 menu?.isUsingTextToSpeech = false
