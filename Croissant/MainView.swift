@@ -60,7 +60,7 @@ struct MainView: View {
             return true
         }
         .toast(isPresenting: $viewModel.hasMessage, duration: 5, tapToDismiss: false, offsetY: 15, alert: {
-            AlertToast(displayMode: .hud, type: .complete(.green), title: viewModel.message)
+            AlertToast(displayMode: .hud, type: .regular, title: viewModel.message)
         }, onTap: {
             print("Toast clicked")
         }, completion: {
