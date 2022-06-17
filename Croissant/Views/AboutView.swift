@@ -17,19 +17,22 @@ struct AboutView: View {
             Image(systemName: "circle.fill")
                 .foregroundColor(.red)
                 .frame(width: 12, height: 12)
-                .padding()
+                .padding(.top)
+                .padding(.leading)
                 .onTapGesture {
                     isPresented = false
                 }
             HStack {
-                Image(systemName: "help")
+                Image("logo")
+                    .resizable()
                     .frame(width: 100, height: 100)
+                    .padding(.trailing)
                 VStack(alignment: .leading) {
                     VStack(alignment: .leading) {
                         Text("Croissant")
                             .font(.title)
                             .bold()
-                        Text("Version 1.0 (Build \(viewModel.buildNumber))")
+                        Text("Version 0.9 (Build \(viewModel.buildNumber))")
                             .font(.body)
                     }
                     .padding(.vertical)
