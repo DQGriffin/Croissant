@@ -20,6 +20,10 @@ class AboutViewModel: ObservableObject {
         attributions.append(LibraryAttribution(name: "XMLCoder", link: "https://github.com/CoreOffice/XMLCoder"))
         attributions.append(LibraryAttribution(name: "ZIPFoundation", link: "https://github.com/weichsel/ZIPFoundation"))
         attributions.append(LibraryAttribution(name: "AlertToast", link: "https://github.com/elai950/AlertToast"))
+        attributions.append(LibraryAttribution(name: "GraphicsRenderer", link: "https://github.com/shaps80/GraphicsRenderer"))
+        attributions = attributions.sorted { leftAttribution, rightAttribution in
+            leftAttribution.name < rightAttribution.name
+        }
     }
     
 }
