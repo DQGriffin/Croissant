@@ -126,7 +126,7 @@ struct AuditWriter {
     func writeIVR() {
         let manager = FileManager()
         var path = manager.urls(for: .downloadsDirectory, in: .userDomainMask)[0]
-        path.appendPathComponent("Audit - XML.csv")
+        path.appendPathComponent("Audit.csv")
         
         do {
             try csvData.write(to: path, atomically: false, encoding: .utf8)
