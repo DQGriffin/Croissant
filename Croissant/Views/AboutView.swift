@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct AboutView: View {
     
     let viewModel = AboutViewModel()
     @Binding var isPresented: Bool
     @State var isShowingAttributions = false
+    @State var isShowingToast = false
     
     var body: some View {
         HStack(alignment: .top) {
@@ -47,7 +49,7 @@ struct AboutView: View {
                             Text("Acknowledgements")
                         }
                         Button {
-                            
+                            isShowingToast = true
                         } label: {
                             Text("Give Feedback")
                         }
@@ -60,6 +62,9 @@ struct AboutView: View {
             }
             .sheet(isPresented: $isShowingAttributions, content: {
                 AcknowledgementsView(viewModel: viewModel, isPresented: $isShowingAttributions)
+            })
+            .toast(isPresenting: $isShowingToast, duration: 3, tapToDismiss: false, alert: {
+                AlertToast(displayMode: .hud, type: .regular, title: "Sending feedback doesn't work yet")
             })
             .frame(minWidth: 200, minHeight: 200)
             .frame(maxWidth: 400, maxHeight: 200)
