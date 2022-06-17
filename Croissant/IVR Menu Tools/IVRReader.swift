@@ -77,7 +77,7 @@ struct IVRReader {
             return "ForwardToExternal"
             
         default:
-            return "ForwardToExtension"
+            return rawActionType
         }
     }
     
