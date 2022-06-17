@@ -76,7 +76,15 @@ struct AuditWriter {
     
     mutating func generateAuditForMultiLevelIVR(_ ivr: MultiLevelIVR) {
         for menu in ivr.menus {
-            csvData += "\(menu.name),\(menu.extensionNumber),\(menu.prompt.text),"
+            
+            if let prompt = menu.prompt.text {
+                csvData += "\"\(menu.name)\",\(menu.extensionNumber),\"\(prompt.components(separatedBy: .newlines).joined())\","
+            }
+            else {
+                csvData += "\(menu.name),\(menu.extensionNumber),,"
+            }
+            
+            //csvData += "\(menu.name),\(menu.extensionNumber),\(menu.prompt.text ?? ""),"
             
             var actionMap: [String:String] = [:]
             
