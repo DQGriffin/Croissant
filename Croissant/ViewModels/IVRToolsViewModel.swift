@@ -82,6 +82,8 @@ class IVRToolsViewModel: ObservableObject {
                 isolateExtensionNumbers()
             }
             writeXML()
+            let auditWriter = AuditWriter(menus: menus)
+            auditWriter.write()
             postMessage("Success! XML file exported to downloads folder")
         }
         else if path.path.contains(".xml") {
