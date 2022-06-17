@@ -32,7 +32,7 @@ struct AboutView: View {
                         Text("Croissant")
                             .font(.title)
                             .bold()
-                        Text("Version 0.9 (Build \(viewModel.buildNumber))")
+                        Text("Version 0.9.1 (Build \(viewModel.buildNumber))")
                             .font(.body)
                     }
                     .padding(.vertical)
@@ -46,9 +46,9 @@ struct AboutView: View {
                             Text("Acknowledgements")
                         }
                         Button {
-                            
+
                         } label: {
-                            Text("Submit Feedback")
+                            Text("Give Feedback")
                         }
                         
                         Spacer()
