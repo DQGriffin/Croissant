@@ -22,19 +22,23 @@ struct AcknowledgementsView: View {
                 .onTapGesture {
                     isPresented = false
                 }
-            List(viewModel.attributions) { attribution in
-                HStack {
-                    Text(attribution.name)
-                    Spacer()
-                    Image(systemName: "link")
-                        .onTapGesture {
-                            let url = URL(string: attribution.link)!
-                            if NSWorkspace.shared.open(url) {
-                                print("default browser was successfully opened")
+            VStack {
+                Text("Croissant uses the following third-party libraries")
+                List(viewModel.attributions) { attribution in
+                    HStack {
+                        Text(attribution.name)
+                        Spacer()
+                        Image(systemName: "link")
+                            .onTapGesture {
+                                let url = URL(string: attribution.link)!
+                                if NSWorkspace.shared.open(url) {
+                                    print("default browser was successfully opened")
+                                }
                             }
-                        }
+                    }
                 }
             }
+            .padding()
         }
         .frame(width: 380, height: 250)
     }
