@@ -36,7 +36,7 @@ struct AcknowledgementsView: View {
                 }
             }
         }
-        .frame(width: 380, height: 300)
+        .frame(width: 380, height: 250)
     }
 }
 
