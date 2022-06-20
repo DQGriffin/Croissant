@@ -80,6 +80,9 @@ struct AuditWriter {
             if let prompt = menu.prompt.text {
                 csvData += "\"\(menu.name)\",\(menu.extensionNumber),\"\(prompt.components(separatedBy: .newlines).joined())\","
             }
+            else if let name = menu.prompt.name {
+                csvData += "\"\(menu.name)\",\(menu.extensionNumber),\"\(name)\","
+            }
             else {
                 csvData += "\(menu.name),\(menu.extensionNumber),,"
             }
