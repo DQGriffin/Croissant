@@ -41,11 +41,11 @@ class IVRToolsViewModel: ObservableObject {
         }
     }
     
-    func writeXML() {
+    func writeXML(withFilename filename: String) {
         setStatus(to: "Writing XML file")
         let manager = FileManager()
         var path = manager.urls(for: .downloadsDirectory, in: .userDomainMask)[0]
-        path.appendPathComponent("Auto-Receptionist.xml")
+        path.appendPathComponent(filename)
         writer.write(menus: menus, toPath: path)
         setStatus(to: "Auto-Receptionist.xml exported to downloads folder")
         
@@ -62,7 +62,8 @@ class IVRToolsViewModel: ObservableObject {
                 if isIsolateExtensionNumberEnabled {
                     isolateExtensionNumbers()
                 }
-                writeXML()
+                let filename = path.lastPathComponent.replacingOccurrences(of: ".xlsx", with: ".xml")
+                writeXML(withFilename: filename)
                 let auditWriter = AuditWriter(menus: menus)
                 auditWriter.write()
                 postMessage("Success! XML file exported to downloads folder")
@@ -81,7 +82,8 @@ class IVRToolsViewModel: ObservableObject {
             if isIsolateExtensionNumberEnabled {
                 isolateExtensionNumbers()
             }
-            writeXML()
+            let filename = path.lastPathComponent.replacingOccurrences(of: ".csv", with: ".xml")
+            writeXML(withFilename: filename)
             let auditWriter = AuditWriter(menus: menus)
             auditWriter.write()
             postMessage("Success! XML file exported to downloads folder")
@@ -103,7 +105,8 @@ class IVRToolsViewModel: ObservableObject {
         if isIsolateExtensionNumberEnabled {
             isolateExtensionNumbers()
         }
-        writeXML()
+        let filename = path.lastPathComponent.replacingOccurrences(of: ".csv", with: ".xml")
+        writeXML(withFilename: filename)
         Task {
             await MainActor.run {
                 //hasMenus = true
