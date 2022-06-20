@@ -36,7 +36,7 @@ struct ExcelIVRReader {
                         for row in worksheet.data?.rows ?? [] {
                             var rowData = ""
                             for c in row.cells {
-                                if let value = c.value {
+                                if c.value != nil {
                                     let rowIndex = "\(c.reference)".filter("ABCDEFGHIJKLMNOPQRSTUVWXYZ".contains)
                                     rowData += "\(columnMap[rowIndex]!);\(c.stringValue(sharedStrings)!) ^ "
                                 }
