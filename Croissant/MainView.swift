@@ -26,7 +26,7 @@ struct MainView: View {
             VStack(alignment: .leading) {
                 Text("1. Drag and drop the BRD into this window")
                     .font(.caption2)
-                Text("2. Check your downloads folder for the generated Auto-Receptionist.xml file")
+                Text("2. Check your downloads folder for the generated XML file")
                     .font(.caption2)
                 Text("3. Upload the file in Service Web")
                     .font(.caption2)
