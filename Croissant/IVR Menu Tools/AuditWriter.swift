@@ -121,10 +121,10 @@ struct AuditWriter {
         }
     }
     
-    func write() {
+    func write(filename: String) {
         let manager = FileManager()
         var path = manager.urls(for: .downloadsDirectory, in: .userDomainMask)[0]
-        path.appendPathComponent("Audit.csv")
+        path.appendPathComponent(filename)
         
         do {
             try csvData.write(to: path, atomically: false, encoding: .utf8)
@@ -134,10 +134,10 @@ struct AuditWriter {
         }
     }
     
-    func writeIVR() {
+    func writeIVR(filename: String) {
         let manager = FileManager()
         var path = manager.urls(for: .downloadsDirectory, in: .userDomainMask)[0]
-        path.appendPathComponent("Audit.csv")
+        path.appendPathComponent(filename)
         
         do {
             try csvData.write(to: path, atomically: false, encoding: .utf8)
