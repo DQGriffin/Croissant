@@ -62,10 +62,14 @@ class IVRToolsViewModel: ObservableObject {
                 if isIsolateExtensionNumberEnabled {
                     isolateExtensionNumbers()
                 }
-                let filename = path.lastPathComponent.replacingOccurrences(of: ".xlsx", with: ".xml")
+                
+                var filename = path.lastPathComponent.replacingOccurrences(of: ".xlsx", with: ".xml")
                 writeXML(withFilename: filename)
+                
+                filename = filename.replacingOccurrences(of: ".xml", with: ".csv")
                 let auditWriter = AuditWriter(menus: menus)
-                auditWriter.write()
+                auditWriter.write(filename: filename)
+                
                 postMessage("Success! XML file exported to downloads folder")
             }
             catch {
@@ -82,14 +86,18 @@ class IVRToolsViewModel: ObservableObject {
             if isIsolateExtensionNumberEnabled {
                 isolateExtensionNumbers()
             }
-            let filename = path.lastPathComponent.replacingOccurrences(of: ".csv", with: ".xml")
+            
+            var filename = path.lastPathComponent.replacingOccurrences(of: ".csv", with: ".xml")
             writeXML(withFilename: filename)
+            
+            filename = filename.replacingOccurrences(of: ".xml", with: ".csv")
             let auditWriter = AuditWriter(menus: menus)
-            auditWriter.write()
+            auditWriter.write(filename: filename)
+            
             postMessage("Success! XML file exported to downloads folder")
         }
         else if path.path.contains(".xml") {
-            let xmlReader = XMLReader(path: path.path)
+            let xmlReader = XMLReader(path: path)
         }
         else {
             postMessage("Hmmm. I don't know what to do with that file.")
