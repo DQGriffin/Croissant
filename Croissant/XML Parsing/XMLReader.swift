@@ -16,7 +16,10 @@ struct XMLReader {
             let xmlData = try String(contentsOfFile: path.path)
             ivr = try! XMLDecoder().decode(MultiLevelIVR.self, from: Data(xmlData.utf8))
             
-            let filename = path.lastPathComponent.replacingOccurrences(of: ".xml", with: ".csv")
+            var filename = path.lastPathComponent.replacingOccurrences(of: ".xml", with: ".csv")
+            if let dotIndex = filename.lastIndex(of: ".") {
+                filename.insert(contentsOf: " - Audit", at: dotIndex)
+            }
             
             let auditWriter = AuditWriter(multiLevelIVR: ivr)
             auditWriter.writeIVR(filename: filename)

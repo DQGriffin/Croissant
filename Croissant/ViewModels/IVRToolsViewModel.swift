@@ -67,6 +67,9 @@ class IVRToolsViewModel: ObservableObject {
                 writeXML(withFilename: filename)
                 
                 filename = filename.replacingOccurrences(of: ".xml", with: ".csv")
+                if let dotIndex = filename.lastIndex(of: ".") {
+                    filename.insert(contentsOf: "- Audit", at: dotIndex)
+                }
                 let auditWriter = AuditWriter(menus: menus)
                 auditWriter.write(filename: filename)
                 
@@ -91,6 +94,9 @@ class IVRToolsViewModel: ObservableObject {
             writeXML(withFilename: filename)
             
             filename = filename.replacingOccurrences(of: ".xml", with: ".csv")
+            if let dotIndex = filename.lastIndex(of: ".") {
+                filename.insert(contentsOf: "- Audit", at: dotIndex)
+            }
             let auditWriter = AuditWriter(menus: menus)
             auditWriter.write(filename: filename)
             
